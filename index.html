@@ -77,7 +77,16 @@
     --gold:#B68B3F;           /* Gold dekorativ (Linien, große Ziffern) */
     --gold-deep:#82622A;      /* Gold lesbar (Links, Labels) */
     --gold-soft:rgba(182,139,63,.14);
-    --sage:#6E7B5E;           /* Salbei, sparsam */
+    --sage:#6E7B5E;           /* Salbei — Pflanzenfarbe */
+    --sage-deep:#52614A;      /* Salbei lesbar */
+    --sage-soft:rgba(110,123,94,.16);
+    --henna:#B05A35;          /* Henna/Kupfer — Pflanzenfarbe */
+    --henna-deep:#8C4426;     /* Henna lesbar */
+    --henna-soft:rgba(176,90,53,.14);
+    --honey:#C99A2E;          /* Kamille/Honig — Pflanzenfarbe */
+    --honey-deep:#7F5F1B;     /* Honig lesbar */
+    --honey-soft:rgba(201,154,46,.16);
+    --indigo:#5A6E96;         /* Indigo — Pflanzenfarbe (nur Tupfer) */
     --night:#241D14;          /* dunkle Sektionen/Footer */
     --night-2:#2C241A;
     --bone:#F4EDDD;           /* Text auf dunkel */
@@ -177,8 +186,9 @@
   .foto .hero{min-height:auto;}
   .hero{min-height:100svh;display:flex;align-items:center;padding:calc(var(--nav-h) + var(--sp-4)) 0 var(--sp-5);overflow:hidden;isolation:isolate;
     background:
-      radial-gradient(52vmax 44vmax at 86% 8%, rgba(182,139,63,.13), transparent 62%),
-      radial-gradient(40vmax 36vmax at -6% 108%, rgba(110,123,94,.10), transparent 58%),
+      radial-gradient(52vmax 44vmax at 86% 8%, rgba(182,139,63,.14), transparent 62%),
+      radial-gradient(40vmax 36vmax at -6% 108%, rgba(110,123,94,.14), transparent 58%),
+      radial-gradient(34vmax 30vmax at 74% 112%, rgba(176,90,53,.09), transparent 60%),
       var(--paper);}
   .hero-grid{display:grid;grid-template-columns:1.618fr 1fr;gap:clamp(32px,5vw,72px);align-items:center;}
   .hero h1{font-size:var(--step-5);font-weight:700;line-height:var(--lh-tight);letter-spacing:-.025em;margin-top:var(--sp-3);max-width:15ch;}
@@ -319,7 +329,8 @@
   .anfahrt-tipp svg{flex:none;width:18px;height:18px;color:var(--gold-deep);margin-top:2px;}
 
   /* ═══ 13 · FOOTER ═══ */
-  footer{background:var(--night);color:var(--bone-dim);padding:clamp(48px,7vw,72px) 0 110px;}
+  /* ⚠ bewusst .site-footer statt footer — sonst erwischt es die <footer> in den Zitat-Karten! */
+  .site-footer{background:var(--night);color:var(--bone-dim);padding:clamp(48px,7vw,72px) 0 110px;}
   .foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:36px;}
   .foot-brand .wm{color:var(--bone);font-size:24px;}
   .foot-brand .wm .gold{color:var(--gold);}
@@ -339,6 +350,34 @@
     .sticky-bar a.call{background:var(--gold);color:#241D14;}
     body{padding-bottom:74px;}
   }
+
+  /* ═══ Bunt-Schicht — Tatjanas Pflanzenfarben als Palette (Henna · Salbei · Kamille · Indigo) ═══ */
+  .hero h1 em.gruen{color:var(--sage-deep);}
+  .hero h1 em.gruen::after{background:var(--sage);opacity:.4;}
+  .trust:nth-child(2) svg{color:var(--henna-deep);}
+  .trust:nth-child(3) svg{color:var(--sage-deep);}
+  .trust:nth-child(4) svg{color:var(--honey-deep);}
+  .card{border-top:3px solid var(--gold);}
+  .card--sage{border-top-color:var(--sage);}
+  .card--sage .ic{background:var(--sage-soft);}
+  .card--sage .ic svg{color:var(--sage-deep);}
+  .card--sage .tag{color:var(--sage-deep);background:var(--sage-soft);border-color:rgba(110,123,94,.36);}
+  .card--henna{border-top-color:var(--henna);}
+  .card--henna .ic{background:var(--henna-soft);}
+  .card--henna .ic svg{color:var(--henna-deep);}
+  .card--henna .tag{color:var(--henna-deep);background:var(--henna-soft);border-color:rgba(176,90,53,.34);}
+  section.pf{background:radial-gradient(42vmax 32vmax at 92% 6%, rgba(176,90,53,.12), transparent 60%), radial-gradient(38vmax 30vmax at 2% 96%, rgba(110,123,94,.15), transparent 56%), var(--night);}
+  .pf-point:nth-child(2) svg{color:#D08A63;}
+  .pf-point:nth-child(3) svg{color:#9DB08A;}
+  .step:nth-child(2)::before{color:var(--henna);}
+  .step:nth-child(3)::before{color:var(--sage-deep);}
+  .quali li:nth-child(2)::before{background:var(--henna);}
+  .quali li:nth-child(3)::before{background:var(--sage);}
+  .stimmen-grid .quote-card{border-top:3px solid var(--henna);}
+  .stimmen-grid .quote-card:last-child{border-top-color:var(--sage);}
+  .stimmen-grid .quote-card footer::before{background:var(--henna);}
+  .stimmen-grid .quote-card:last-child footer::before{background:var(--sage);}
+  .zitat blockquote::before{color:var(--henna);opacity:.4;}
 
   /* ═══ Fokus (A11y) ═══ */
   :where(a,button,summary):focus-visible{outline:none;box-shadow:var(--focus);border-radius:var(--radius-sm);}
@@ -396,12 +435,12 @@
 
   /* ═══ Print: Aushang fürs Schaufenster (Kontakt · Zeiten · Anfahrt) ═══ */
   @media print{
-    .nav,.sticky-bar,.hero-visual,.hero-hint,.hero-cta,.pf,.zitat,.stimmen,.faq,.ablauf,footer .foot-col:last-child,body::after{display:none !important;}
+    .nav,.sticky-bar,.hero-visual,.hero-hint,.hero-cta,.pf,.zitat,.stimmen,.faq,.ablauf,.site-footer .foot-col:last-child,body::after{display:none !important;}
     body{background:#fff;color:#000;font-size:11pt;padding:0;}
     section{padding:14pt 0;page-break-inside:avoid;}
     .hero{min-height:0;padding-top:10pt;}
     .card,.k-card,.trust{box-shadow:none;border:1px solid #999;}
-    footer{background:#fff;color:#000;padding:10pt 0;}
+    .site-footer{background:#fff;color:#000;padding:10pt 0;}
     a[href^="tel"]::after{content:" (" attr(href) ")";font-size:9pt;}
   }
   </style>
@@ -442,7 +481,7 @@
         <div class="hero-grid">
           <div>
             <span class="eyebrow">Naturfrisör Goldschnitt · Kaufering bei Landsberg</span>
-            <h1>Schneiden mit <em>Zeit</em>.<br>Färben mit <em>Pflanzen</em>.</h1>
+            <h1>Schneiden mit <em>Zeit</em>.<br>Färben mit <em class="gruen">Pflanzen</em>.</h1>
             <p class="hero-sub lead">Schnitt, Pflege und Pflanzenhaarfarbe von Friseurmeisterin Tatjana Wackenhut — seit über einem Jahrzehnt in Kaufering. Mit Naturkosmetik, Handwerk und der Ruhe, die Ihr Haar verdient.</p>
             <div class="hero-cta">
               <a class="btn" href="tel:+49819164102"><svg class="tel-ico" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 08191 / 64102 anrufen</a>
@@ -457,6 +496,11 @@
                 <path class="spiral-draw" pathLength="1" stroke-width="1.1" d="M0 21 A21 21 0 0 1 21 0 A13 13 0 0 1 34 13 A8 8 0 0 1 26 21 A5 5 0 0 1 21 16 A3 3 0 0 1 24 13 A2 2 0 0 1 26 15 A1 1 0 0 1 25 16"/>
                 <path class="spiral-draw" pathLength="1" stroke-width=".45" stroke-opacity=".5" d="M21 0 L21 21 M21 13 L34 13 M26 13 L26 21 M21 16 L26 16 M24 13 L24 16" />
                 <circle cx="25.4" cy="15.4" r=".7" fill="currentColor" stroke="none"/>
+                <!-- Pflanzenfarben-Pigmente, die in die Locke wirbeln -->
+                <circle cx="5.5" cy="3.5" r="1" style="fill:var(--henna)" stroke="none"/>
+                <circle cx="30.5" cy="-1" r=".8" style="fill:var(--sage)" stroke="none"/>
+                <circle cx="36" cy="17.5" r=".75" style="fill:var(--honey)" stroke="none"/>
+                <circle cx="1.5" cy="13" r=".65" style="fill:var(--indigo)" stroke="none"/>
               </svg>
             </div>
           </div>
@@ -496,14 +540,14 @@
             <p>Ein Schnitt, der auch morgen früh noch sitzt — weil er zu Ihrem Haar passt und nicht zur Schablone. Waschen, schneiden, föhnen: mit Ruhe und Blick fürs Detail.</p>
             <ul class="tags" aria-label="Leistungen in diesem Bereich"><li class="tag">Waschen · Schneiden · Föhnen</li><li class="tag">Trockenschnitt</li></ul>
           </article>
-          <article class="card">
+          <article class="card card--sage">
             <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21 C 6.5 17.5 5 11.5 5.8 6.2 C 11 5.4 17 6.8 20.2 12.6 C 17.6 17.8 14 20.4 12 21Z"/><path d="M5.8 6.2 C 9.5 10 14 13.6 20.2 12.6"/><path d="M9 3.2 9.8 5 M14 2.6 14.4 4.6"/></svg></div>
             <h3>Pflanzenhaarfarbe</h3>
             <p>Färben mit dem, was die Natur hergibt: Blätter, Blüten, Wurzeln. Warme, lebendige Töne im Einklang mit Ihrem Naturhaar — und eine ehrliche Beratung vorab.</p>
             <ul class="tags" aria-label="Leistungen in diesem Bereich"><li class="tag">Pflanzenfarbe</li><li class="tag">Beratung zuerst</li></ul>
             <a class="more" href="#pflanzenfarbe">Warum Pflanzenfarbe? <span aria-hidden="true">↓</span></a>
           </article>
-          <article class="card">
+          <article class="card card--henna">
             <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14 C 4 9 7.5 5.5 12 5.5 C 16.5 5.5 20 9 20 14"/><path d="M12 5.5 V 3 M7 6.8 5.8 4.8 M17 6.8 18.2 4.8"/><path d="M4 17.5 H 20 M6.5 21 H 17.5"/></svg></div>
             <h3>Wohlfühlen &amp; Anlässe</h3>
             <p>Eine festliche Hochsteckfrisur, kunstvoll Geflochtenes — oder eine Bürstenkopfmassage, bei der Sie einfach mal die Augen zumachen dürfen.</p>
@@ -539,7 +583,7 @@
                 <g class="sway">
                   <path d="M30 240 C 28 160 32 90 30 40"/>
                   <path d="M30 110 C 12 100 6 86 8 70 M30 150 C 48 140 56 124 54 106"/>
-                  <circle cx="30" cy="34" r="10" fill="currentColor" fill-opacity=".25"/>
+                  <circle cx="30" cy="34" r="10" style="fill:var(--honey);fill-opacity:.8"/>
                   <path d="M30 22 V 8 M41 26 50 16 M44 36 58 34 M19 26 10 16 M16 36 2 34 M40 44 50 52 M20 44 10 52"/>
                 </g>
               </g>
@@ -547,22 +591,22 @@
               <g transform="translate(150 60)">
                 <g class="sway s2">
                   <path d="M40 210 C 44 150 38 90 42 30"/>
-                  <path d="M42 60 C 58 52 66 38 64 22 C 48 26 42 42 42 60Z" fill="currentColor" fill-opacity=".14"/>
-                  <path d="M41 110 C 25 102 17 88 19 72 C 35 76 41 92 41 110Z" fill="currentColor" fill-opacity=".14"/>
-                  <path d="M42 160 C 58 152 66 138 64 122 C 48 126 42 142 42 160Z" fill="currentColor" fill-opacity=".14"/>
+                  <path d="M42 60 C 58 52 66 38 64 22 C 48 26 42 42 42 60Z" style="fill:var(--sage);fill-opacity:.55"/>
+                  <path d="M41 110 C 25 102 17 88 19 72 C 35 76 41 92 41 110Z" style="fill:var(--sage);fill-opacity:.55"/>
+                  <path d="M42 160 C 58 152 66 138 64 122 C 48 126 42 142 42 160Z" style="fill:var(--sage);fill-opacity:.55"/>
                 </g>
               </g>
               <!-- Indigo-Zweig klein -->
               <g transform="translate(216 120)">
                 <g class="sway s3">
                   <path d="M20 150 C 18 110 22 70 20 40"/>
-                  <circle cx="10" cy="56" r="4" fill="currentColor" fill-opacity=".3"/><circle cx="30" cy="70" r="4" fill="currentColor" fill-opacity=".3"/><circle cx="9" cy="88" r="4" fill="currentColor" fill-opacity=".3"/><circle cx="31" cy="102" r="4" fill="currentColor" fill-opacity=".3"/>
+                  <circle cx="10" cy="56" r="4" style="fill:#8FA3C9;fill-opacity:.85"/><circle cx="30" cy="70" r="4" style="fill:#8FA3C9;fill-opacity:.85"/><circle cx="9" cy="88" r="4" style="fill:#8FA3C9;fill-opacity:.85"/><circle cx="31" cy="102" r="4" style="fill:#8FA3C9;fill-opacity:.85"/>
                 </g>
               </g>
               <!-- Pigmentschale -->
               <path d="M70 282 C 70 268 96 260 150 260 C 204 260 230 268 230 282 C 230 296 204 304 150 304 C 96 304 70 296 70 282Z" stroke-width="1.8"/>
               <path d="M96 276 C 110 270 130 267 150 267 M150 267 C 174 267 196 271 206 277" stroke-opacity=".55"/>
-              <circle cx="120" cy="284" r="2.2" fill="currentColor" stroke="none" fill-opacity=".8"/><circle cx="150" cy="288" r="2.2" fill="currentColor" stroke="none" fill-opacity=".55"/><circle cx="180" cy="283" r="2.2" fill="currentColor" stroke="none" fill-opacity=".8"/>
+              <circle cx="116" cy="284" r="3" style="fill:#D08A63" stroke="none"/><circle cx="148" cy="288" r="3" style="fill:#D9AC62" stroke="none"/><circle cx="180" cy="283" r="3" style="fill:#8FA3C9" stroke="none"/><circle cx="132" cy="291" r="2" style="fill:#9DB08A" stroke="none"/><circle cx="165" cy="280" r="2" style="fill:#9DB08A" stroke="none"/>
             </svg>
           </div>
         </div>
@@ -741,7 +785,7 @@
   </main>
 
   <!-- ═══ FOOTER ═══ -->
-  <footer>
+  <footer class="site-footer">
     <div class="wrap">
       <div class="foot-top">
         <div class="foot-brand">
@@ -768,7 +812,7 @@
       </div>
       <div class="foot-bottom">
         <span>© 2026 Goldschnitt · Tatjana Wackenhut, Kaufering</span>
-        <span>Ohne Cookies, ohne Tracking — dafür mit Zeit gemacht. <span style="color:var(--gold);">⌀</span></span>
+        <span style="display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;">Ohne Cookies, ohne Tracking — dafür mit Zeit gemacht.<span aria-hidden="true" style="display:inline-flex;gap:5px;"><i style="width:7px;height:7px;border-radius:50%;background:var(--gold);"></i><i style="width:7px;height:7px;border-radius:50%;background:#D08A63;"></i><i style="width:7px;height:7px;border-radius:50%;background:#9DB08A;"></i><i style="width:7px;height:7px;border-radius:50%;background:#8FA3C9;"></i></span></span>
       </div>
     </div>
   </footer>
