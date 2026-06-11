@@ -18,6 +18,8 @@ body{background:var(--paper);color:var(--ink);font-family:'Inter','Inter-Fallbac
 .spirale{width:min(190px,46vw);color:var(--gold);margin:0 auto 1.6rem;}
 .hand{display:block;text-align:center;font-size:1.05rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);}
 h1{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:clamp(2rem, 1.45rem + 3.4vw, 3.3rem);line-height:1.12;margin:.7rem 0 1.4rem;text-align:center;text-wrap:balance;}
+h1 em{font-style:normal;color:var(--gold-deep);position:relative;}
+h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.05em;height:.09em;background:var(--gold);opacity:.35;border-radius:2px;}
 h2{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.45rem;margin-bottom:.8rem;}
 p{color:var(--ink-soft);}
 p + p{margin-top:1em;}
@@ -29,6 +31,13 @@ p + p{margin-top:1em;}
 .card li{position:relative;padding-left:1.9em;color:var(--ink-soft);}
 .card li::before{content:"";position:absolute;left:.15em;top:.5em;width:9px;height:9px;border-radius:50%;background:var(--gold);}
 .card li b{color:var(--ink);}
+/* Pflanzenfarben-Punkte: Henna · Salbei · Kamille · Indigo */
+.card li:nth-child(2)::before{background:#B05A35;}
+.card li:nth-child(3)::before{background:#6E7B5E;}
+.card li:nth-child(4)::before{background:#C99A2E;}
+.card li:nth-child(5)::before{background:#5A6E96;}
+.card{border-top:3px solid var(--gold);}
+.card + .card{border-top-color:#6E7B5E;}
 section.block{margin-top:3.2rem;}
 .block-head{text-align:center;margin-bottom:1.4rem;}
 .block-head .hand{margin-bottom:.3rem;}
@@ -79,7 +88,7 @@ footer b{color:var(--gold-deep);}
   </svg>
 
   <span class="hand">Psst … eine kleine Überraschung</span>
-  <h1>Liebe Tatjana — dein Goldschnitt hat jetzt einen goldenen Schnitt.</h1>
+  <h1>Liebe Tatjana — dein Goldschnitt hat jetzt einen <em>goldenen Schnitt</em>.</h1>
 
   <div class="brief">
     <p>Du stehst seit so vielen Jahren an der Schere — mit Handwerk, Pflanzenfarbe und ganz viel Herz. Nur deine Website wusste davon bisher nichts. Das fanden wir ungerecht.</p>
@@ -112,11 +121,11 @@ footer b{color:var(--gold-deep);}
     <div class="phones">
       <figure class="phone">
         <div class="rahmen"><img src="assets/vorschau/alt-handy.jpg" width="390" height="844" loading="lazy" alt="Bisherige Website am Smartphone"></div>
-        <figcaption>Bisher — <b>mit Cookie-Banner</b> über der halben Seite</figcaption>
+        <figcaption>Bisher — <b style="color:#8C4426;">mit Cookie-Banner</b> über der halben Seite</figcaption>
       </figure>
       <figure class="phone">
         <div class="rahmen"><img src="assets/vorschau/neu-handy.jpg" width="390" height="844" loading="lazy" alt="Neuer Website-Entwurf am Smartphone"></div>
-        <figcaption>Neu — <b>ohne Banner</b>, dafür mit Anruf-Knopf</figcaption>
+        <figcaption>Neu — <b style="color:#52614A;">ohne Banner</b>, dafür mit Anruf-Knopf</figcaption>
       </figure>
     </div>
     <div class="tacho">
@@ -152,7 +161,7 @@ footer b{color:var(--gold-deep);}
     <span class="gruss">Von Herzen —<br>Marie, Lenny &amp; Michi</span>
   </p>
 </main>
-<footer>Unverbindliche Design-Vorschau · mit ♥ gebaut von <b>Lechcode</b>, Landsberg am Lech</footer>
+<footer>Unverbindliche Design-Vorschau · mit ♥ gebaut von <b>Lechcode</b>, Landsberg am Lech<span aria-hidden="true" style="display:inline-flex;gap:5px;margin-left:10px;vertical-align:middle;"><i style="width:7px;height:7px;border-radius:50%;background:#B68B3F;"></i><i style="width:7px;height:7px;border-radius:50%;background:#B05A35;"></i><i style="width:7px;height:7px;border-radius:50%;background:#6E7B5E;"></i><i style="width:7px;height:7px;border-radius:50%;background:#5A6E96;"></i></span></footer>
 <script>
 (function(){
   var s=document.getElementById('slider');if(!s)return;
