@@ -1,0 +1,4 @@
+# Goldschnitt-Demo — nicht öffentliche Design-Vorschau.
+# Vor dem echten Go-Live ersetzen (dann: Allow + sitemap.xml).
+User-agent: *
+Disallow: /

@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<!--
+  ╔════════════════════════════════════════════════════════════════════╗
+  ║  GOLDSCHNITT NATURFRISÖR · Tatjana Wackenhut · Kaufering            ║
+  ║  Design-Vorschau (DEMO, Geschenk) — gebaut von Lechcode, 06/2026    ║
+  ║  Konzept: Goldener Schnitt = Marke. Spirale = Signet & Locke.       ║
+  ║  Single-File, kein Build, keine externen Requests, keine Cookies.   ║
+  ╠════════════════════════════════════════════════════════════════════╣
+  ║  ⚠ DEMO-STATUS:                                                     ║
+  ║   • noindex bleibt, bis Impressum + Datenschutz echt & freigegeben  ║
+  ║   • Texte neu geschrieben — Passagen mit Kommentar                  ║
+  ║     "VOM KUNDEN ZU PRÜFEN" vor Go-Live von Tatjana freigeben lassen ║
+  ║   • Fakten-Quellen: _projekt/INVENTAR.md + INVENTAR-QUERCHECK.md    ║
+  ╚════════════════════════════════════════════════════════════════════╝
+-->
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Foto-Modus für Screenshots: ?foto unterdrückt .js → alle Reveals sofort sichtbar -->
+  <script>if(location.search.indexOf('foto')===-1){document.documentElement.classList.add('js');}else{document.documentElement.classList.add('foto');}</script>
+  <!-- ⚠ ENTFERNEN sobald Impressum+Datenschutz live & von Tatjana freigegeben -->
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Naturfriseur in Kaufering | Goldschnitt · Tatjana Wackenhut</title>
+  <meta name="description" content="Schnitt, Pflege und Pflanzenhaarfarbe von Meisterin Tatjana Wackenhut. Naturfrisör Goldschnitt in Kaufering — mit Zeit und Naturkosmetik. ☎ 08191/64102" />
+  <meta property="og:title" content="Goldschnitt — Naturfrisör in Kaufering" />
+  <meta property="og:description" content="Schneiden mit Zeit. Färben mit Pflanzen. Friseurmeisterin Tatjana Wackenhut, Kolpingstraße 36, Kaufering." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:image" content="assets/og.jpg" />
+  <meta name="theme-color" content="#F7F1E6" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23241D14'/%3E%3Cg transform='translate(8,19)' fill='none' stroke='%23B68B3F' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M0 29.4 A29.4 29.4 0 0 1 29.4 0 A18.2 18.2 0 0 1 47.6 18.2 A11.2 11.2 0 0 1 36.4 29.4 A7 7 0 0 1 29.4 22.4 A4.2 4.2 0 0 1 33.6 18.2 A2.8 2.8 0 0 1 36.4 21 A1.4 1.4 0 0 1 35 22.4'/%3E%3C/g%3E%3C/svg%3E" />
+  <!-- Schriften lokal gehostet — DSGVO: keine Verbindung zu Google-Servern -->
+  <link rel="preload" href="assets/fonts/fraunces-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/fonts.css">
+
+  <!-- Strukturierte Daten: nur, was sichtbar auf der Seite steht. geo folgt bei Go-Live (Google-Profil). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "Goldschnitt Naturfrisör",
+    "alternateName": "Friseursalon Goldschnitt",
+    "url": "https://www.goldschnitt-naturfrisoer.de/",
+    "image": "https://www.goldschnitt-naturfrisoer.de/assets/og.jpg",
+    "telephone": "+49 8191 64102",
+    "founder": { "@type": "Person", "name": "Tatjana Wackenhut", "jobTitle": "Friseurmeisterin" },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kolpingstraße 36",
+      "postalCode": "86916",
+      "addressLocality": "Kaufering",
+      "addressRegion": "Bayern",
+      "addressCountry": "DE"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "08:00", "closes": "12:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "15:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Friday"], "opens": "08:00", "closes": "12:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Friday"], "opens": "14:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:30" }
+    ],
+    "areaServed": "Kaufering, Landsberg am Lech und Umgebung"
+  }
+  </script>
+
+  <style>
+  /* ═══ 1 · TOKENS — Creme · Espresso · mattes Gold (Goldener Schnitt) ═══ */
+  :root{
+    --paper:#F7F1E6;          /* Grund: warmes Elfenbein */
+    --cream:#EFE6D3;          /* Flächen-Wechsel */
+    --warm-white:#FDFAF2;     /* Karten */
+    --ink:#2C251C;            /* Espresso — Text */
+    --ink-soft:#5D5243;       /* Sekundärtext */
+    --ink-faint:#8A7D6B;      /* Fußnoten */
+    --gold:#B68B3F;           /* Gold dekorativ (Linien, große Ziffern) */
+    --gold-deep:#82622A;      /* Gold lesbar (Links, Labels) */
+    --gold-soft:rgba(182,139,63,.14);
+    --sage:#6E7B5E;           /* Salbei, sparsam */
+    --night:#241D14;          /* dunkle Sektionen/Footer */
+    --night-2:#2C241A;
+    --bone:#F4EDDD;           /* Text auf dunkel */
+    --bone-dim:#CDC2AC;
+    --line:rgba(44,37,28,.13);
+    --line-d:rgba(182,139,63,.22);
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+    --sans:'Inter','Inter-Fallback',-apple-system,'Segoe UI',sans-serif;
+
+    /* Typo-Skala, an φ=1,618 angelehnt (fluid; ⚠ Leerzeichen um + sind Pflicht) */
+    --step--1:clamp(13.5px, 12.8px + .3vw, 15px);
+    --step-0:clamp(16.5px, 15.9px + .35vw, 18px);
+    --step-1:clamp(18px, 17px + .6vw, 20.5px);
+    --step-2:clamp(21px, 19px + 1.1vw, 26px);
+    --step-3:clamp(26px, 22.5px + 1.8vw, 34px);
+    --step-4:clamp(33px, 26px + 3.6vw, 52px);
+    --step-5:clamp(40px, 28px + 6.2vw, 68px);
+    --lh-tight:1.06; --lh-snug:1.18; --lh-body:1.65; --lh-relaxed:1.75;
+    --ls-label:.16em;
+
+    /* Spacing-Leiter */
+    --sp-1:clamp(8px, 1vw, 12px);
+    --sp-2:clamp(14px, 1.6vw, 18px);
+    --sp-3:clamp(20px, 2.4vw, 26px);
+    --sp-4:clamp(30px, 3.6vw, 40px);
+    --sp-5:clamp(44px, 5.5vw, 64px);
+    --sp-6:clamp(64px, 9.5vw, 120px);
+
+    --radius:16px; --radius-lg:22px; --radius-sm:10px; --radius-pill:999px;
+    --nav-h:66px;
+    --shadow:0 2px 6px -3px rgba(60,45,25,.10), 0 24px 48px -28px rgba(60,45,25,.22);
+    --shadow-lift:0 2px 6px -3px rgba(60,45,25,.12), 0 30px 56px -26px rgba(60,45,25,.30);
+    --ease:cubic-bezier(.22,.61,.36,1);
+    --focus:0 0 0 3px rgba(130,98,42,.5);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 14px);}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:var(--step-0);line-height:var(--lh-body);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  /* feines Papierkorn — taktil statt steril */
+  body::after{content:"";position:fixed;inset:0;z-index:9990;pointer-events:none;opacity:.028;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:var(--lh-snug);letter-spacing:-.015em;text-wrap:balance;}
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  ul{list-style:none;}
+  ::selection{background:rgba(182,139,63,.28);}
+  .wrap{width:min(1100px,92vw);margin-inline:auto;}
+  section{padding:var(--sp-6) 0;position:relative;}
+  .eyebrow{font-size:var(--step--1);font-weight:600;letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--gold-deep);display:inline-flex;align-items:center;gap:10px;}
+  .eyebrow::before{content:"";width:22px;height:1.5px;background:var(--gold);flex:none;}
+  .sec-head{max-width:56ch;margin-bottom:var(--sp-5);}
+  .sec-head h2{font-size:var(--step-4);margin-top:var(--sp-2);}
+  .sec-head .lead{margin-top:var(--sp-3);}
+  .lead{font-size:var(--step-1);line-height:var(--lh-relaxed);color:var(--ink-soft);}
+  .dark{background:var(--night);color:var(--bone);}
+  .dark h2,.dark h3{color:#FBF5E6;}
+  .dark .lead{color:var(--bone-dim);}
+  .dark .eyebrow{color:var(--gold);}
+  .cream-bg{background:var(--cream);}
+
+  /* Buttons — ein CTA-Wortlaut, ein Stil */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;border:none;
+    background:var(--ink);color:#FBF6EB;font-family:var(--sans);font-weight:600;font-size:var(--step-0);
+    padding:15px 26px;border-radius:var(--radius-pill);min-height:48px;
+    box-shadow:inset 0 1px 0 rgba(255,245,220,.12), 0 16px 30px -14px rgba(44,37,28,.55);
+    transition:transform .28s var(--ease),box-shadow .28s var(--ease),background .28s var(--ease);white-space:nowrap;}
+  .btn:hover{transform:translateY(-2px);background:#3A3124;box-shadow:inset 0 1px 0 rgba(255,245,220,.12), 0 0 0 1.5px var(--gold), 0 20px 36px -14px rgba(44,37,28,.6);}
+  .btn:active{transform:translateY(0);transition-duration:.08s;}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(44,37,28,.28);box-shadow:none;}
+  .btn-ghost:hover{background:var(--gold-soft);border-color:var(--gold-deep);color:var(--ink);box-shadow:none;}
+  .dark .btn{background:var(--bone);color:var(--ink);}
+  .dark .btn:hover{background:#fff;box-shadow:0 0 0 1.5px var(--gold), 0 20px 36px -14px rgba(0,0,0,.6);}
+  .tel-ico{flex:none;}
+
+  /* ═══ 2 · NAV ═══ */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);transition:background .3s var(--ease),box-shadow .3s var(--ease);}
+  .nav.scrolled{background:rgba(247,241,230,.82);backdrop-filter:saturate(150%) blur(14px);-webkit-backdrop-filter:saturate(150%) blur(14px);box-shadow:0 1px 0 var(--line);}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:100%;}
+  .brand{display:inline-flex;align-items:center;gap:11px;}
+  .brand-mark{width:34px;height:auto;color:var(--gold);flex:none;transition:transform .4s var(--ease);}
+  .brand:hover .brand-mark{transform:rotate(-6deg);}
+  .wm{font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:-.01em;line-height:1;color:var(--ink);}
+  .wm .gold{color:var(--gold-deep);}
+  .wm-sub{display:block;font-family:var(--sans);font-weight:600;font-size:9.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-faint);margin-top:3px;}
+  .nav-links{display:flex;align-items:center;gap:26px;}
+  .nav-links a:not(.btn){font-size:15px;color:var(--ink-soft);font-weight:500;position:relative;padding:4px 0;transition:color .2s var(--ease);}
+  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1.5px;background:var(--gold);transition:width .25s var(--ease);}
+  .nav-links a:not(.btn):hover{color:var(--ink);}
+  .nav-links a:not(.btn):hover::after{width:100%;}
+  .nav-links .btn{padding:11px 20px;min-height:44px;font-size:15px;}
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:12px;min-width:48px;min-height:48px;}
+  .nav-toggle span{display:block;width:24px;height:2px;background:var(--ink);border-radius:2px;transition:.3s;margin-inline:auto;}
+  .nav-toggle span + span{margin-top:6px;}
+
+  /* ═══ 3 · HERO ═══ */
+  /* Foto-Modus (?foto): Hero nicht auf Fensterhöhe strecken — für Full-Page-Screenshots */
+  .foto .hero{min-height:auto;}
+  .hero{min-height:100svh;display:flex;align-items:center;padding:calc(var(--nav-h) + var(--sp-4)) 0 var(--sp-5);overflow:hidden;isolation:isolate;
+    background:
+      radial-gradient(52vmax 44vmax at 86% 8%, rgba(182,139,63,.13), transparent 62%),
+      radial-gradient(40vmax 36vmax at -6% 108%, rgba(110,123,94,.10), transparent 58%),
+      var(--paper);}
+  .hero-grid{display:grid;grid-template-columns:1.618fr 1fr;gap:clamp(32px,5vw,72px);align-items:center;}
+  .hero h1{font-size:var(--step-5);font-weight:700;line-height:var(--lh-tight);letter-spacing:-.025em;margin-top:var(--sp-3);max-width:15ch;}
+  .hero h1 em{font-style:normal;color:var(--gold-deep);position:relative;white-space:nowrap;}
+  .hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.085em;background:var(--gold);opacity:.32;border-radius:2px;z-index:-1;}
+  .hero-sub{margin-top:var(--sp-3);max-width:48ch;}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:var(--sp-4);}
+  .hero-status{display:inline-flex;align-items:center;gap:9px;margin-top:var(--sp-3);font-size:var(--step--1);color:var(--ink-soft);background:var(--warm-white);border:1px solid var(--line);padding:8px 15px;border-radius:var(--radius-pill);}
+  .hero-status .dot{width:8px;height:8px;border-radius:50%;background:var(--sage);flex:none;}
+  .hero-status.zu .dot{background:#B5764A;}
+  .hero-status:empty{display:none;}
+  .hero-visual{position:relative;display:grid;place-items:center;}
+  .spiral-stage{position:relative;width:min(440px,100%);}
+  .spiral-stage::before{content:"";position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle at 50% 44%, rgba(182,139,63,.16), rgba(182,139,63,.05) 55%, transparent 72%);}
+  .spiral-svg{position:relative;width:100%;height:auto;color:var(--gold);overflow:visible;}
+  /* Spirale zeichnet sich einmalig (nur mit JS; reduced-motion stoppt sie) */
+  .js .spiral-draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.4s .35s var(--ease) forwards;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  .hero-hint{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);color:var(--ink-faint);font-size:12px;letter-spacing:.18em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:6px;}
+  .hero-hint::after{content:"";width:1.5px;height:34px;background:linear-gradient(var(--gold), transparent);}
+
+  /* ═══ 4 · VERTRAUENSLEISTE ═══ */
+  .trustbar{padding:0 0 var(--sp-6);}
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-block:1px solid var(--line);}
+  .trust{background:var(--paper);padding:clamp(18px,2.6vw,30px) clamp(14px,2vw,26px);display:flex;gap:14px;align-items:flex-start;}
+  .trust svg{flex:none;width:30px;height:30px;color:var(--gold-deep);margin-top:2px;}
+  .trust b{display:block;font-family:var(--serif);font-weight:600;font-size:var(--step-1);line-height:1.25;}
+  .trust span{display:block;font-size:var(--step--1);color:var(--ink-soft);margin-top:4px;line-height:1.5;}
+
+  /* ═══ 5 · LEISTUNGEN ═══ */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .card{background:var(--warm-white);border:1px solid var(--line);border-radius:var(--radius-lg);padding:clamp(24px,3vw,34px) clamp(20px,2.6vw,30px);box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease);}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift);border-color:rgba(182,139,63,.45);}
+  .card .ic{width:52px;height:52px;border-radius:var(--radius-sm);background:var(--gold-soft);display:grid;place-items:center;margin-bottom:18px;}
+  .card .ic svg{width:28px;height:28px;color:var(--gold-deep);}
+  .card h3{font-size:var(--step-2);margin-bottom:10px;}
+  .card p{color:var(--ink-soft);font-size:var(--step-0);flex:1;}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+  .tag{font-size:13px;font-weight:600;color:var(--gold-deep);background:var(--gold-soft);border:1px solid rgba(182,139,63,.3);padding:6px 12px;border-radius:var(--radius-pill);}
+  .card .more{margin-top:16px;font-size:var(--step--1);font-weight:600;color:var(--gold-deep);display:inline-flex;align-items:center;gap:6px;}
+  .card .more:hover{text-decoration:underline;text-underline-offset:3px;}
+  .cards-note{margin-top:var(--sp-4);max-width:62ch;color:var(--ink-soft);font-size:var(--step-0);border-left:2px solid var(--gold);padding-left:16px;}
+
+  /* ═══ 6 · PFLANZENFARBE (dunkel, das Herzstück) ═══ */
+  .pf{overflow:hidden;}
+  .pf-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,72px);align-items:center;}
+  .pf-points{display:grid;gap:18px;margin-top:var(--sp-4);}
+  .pf-point{display:flex;gap:16px;align-items:flex-start;background:var(--night-2);border:1px solid var(--line-d);border-radius:var(--radius);padding:18px 20px;}
+  .pf-point svg{flex:none;width:26px;height:26px;color:var(--gold);margin-top:2px;}
+  .pf-point b{display:block;font-family:var(--serif);font-size:var(--step-1);font-weight:600;color:#FBF5E6;margin-bottom:4px;}
+  .pf-point p{color:var(--bone-dim);font-size:var(--step-0);}
+  .pf-note{margin-top:var(--sp-4);color:var(--bone-dim);font-size:var(--step-0);border-left:2px solid var(--gold);padding-left:16px;max-width:54ch;}
+  .pf-note b{color:#FBF5E6;}
+  .pf-cta{margin-top:var(--sp-4);}
+  .pf-visual{position:relative;display:grid;place-items:center;min-height:320px;}
+  .botanik{width:min(380px,90%);height:auto;color:var(--gold);overflow:visible;}
+  /* v1.2-Regel: äußere <g> positioniert (transform-Attribut), innere <g class="sway"> animiert */
+  .js .sway{animation:sway 7s ease-in-out infinite;transform-origin:50% 100%;}
+  .js .sway.s2{animation-duration:9s;animation-delay:1.2s;}
+  .js .sway.s3{animation-duration:8s;animation-delay:2.1s;}
+  @keyframes sway{0%,100%{transform:rotate(-2.2deg);}50%{transform:rotate(2.2deg);}}
+
+  /* ═══ 7 · ÜBER MICH ═══ */
+  .um-grid{display:grid;grid-template-columns:1fr 1.618fr;gap:clamp(32px,5vw,72px);align-items:center;}
+  .um-frame{position:relative;background:var(--warm-white);border:1px solid var(--line);border-radius:200px 200px var(--radius-lg) var(--radius-lg);padding:clamp(20px,3vw,30px);box-shadow:var(--shadow);}
+  .um-frame svg{width:100%;height:auto;color:var(--gold);}
+  .um-frame figcaption{text-align:center;font-size:var(--step--1);color:var(--ink-faint);margin-top:14px;font-style:italic;}
+  .um-copy .lead + .lead{margin-top:var(--sp-3);}
+  .quali{display:flex;flex-wrap:wrap;gap:10px;margin-top:var(--sp-4);}
+  .quali li{font-size:var(--step--1);font-weight:600;color:var(--ink);background:var(--cream);border:1px solid var(--line);padding:9px 16px;border-radius:var(--radius-pill);display:inline-flex;align-items:center;gap:8px;}
+  .quali li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);flex:none;}
+
+  /* ═══ 8 · FUNDSTÜCK-ZITAT ═══ */
+  .zitat{text-align:center;}
+  .zitat blockquote{position:relative;max-width:30ch;margin-inline:auto;font-family:var(--serif);font-weight:600;font-size:var(--step-3);line-height:1.35;letter-spacing:-.01em;}
+  .zitat blockquote::before{content:"„";position:absolute;top:-.55em;left:50%;transform:translateX(-50%);font-size:3.2em;line-height:1;color:var(--gold);opacity:.45;font-family:var(--serif);}
+  .zitat figcaption{margin-top:var(--sp-3);font-size:var(--step--1);color:var(--ink-soft);letter-spacing:.12em;text-transform:uppercase;}
+  .zitat figcaption b{color:var(--gold-deep);}
+
+  /* ═══ 9 · STIMMEN ═══ */
+  .stimmen-grid{display:grid;grid-template-columns:.9fr 1fr 1fr;gap:20px;align-items:stretch;}
+  .rating-card{background:var(--night);color:var(--bone);border-radius:var(--radius-lg);padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:var(--shadow);}
+  .rating-card .num{font-family:var(--serif);font-weight:700;font-size:var(--step-5);line-height:1;color:var(--gold);}
+  .rating-card .stars{display:flex;justify-content:center;gap:4px;margin-top:12px;color:var(--gold);}
+  .rating-card .lbl{margin-top:12px;font-size:var(--step--1);color:var(--bone-dim);}
+  .quote-card{background:var(--warm-white);border:1px solid var(--line);border-radius:var(--radius-lg);padding:clamp(24px,3vw,34px);box-shadow:var(--shadow);display:flex;flex-direction:column;}
+  .quote-card p{font-family:var(--serif);font-size:var(--step-2);font-weight:600;line-height:1.4;flex:1;}
+  .quote-card footer{margin-top:18px;font-size:var(--step--1);color:var(--ink-soft);display:flex;align-items:center;gap:8px;}
+  .quote-card footer::before{content:"";width:18px;height:1.5px;background:var(--gold);flex:none;}
+  .stimmen-src{margin-top:var(--sp-3);font-size:var(--step--1);color:var(--ink-faint);}
+
+  /* ═══ 10 · ABLAUF ═══ */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:schritt;}
+  .step{background:var(--warm-white);border:1px solid var(--line);border-radius:var(--radius-lg);padding:clamp(24px,3vw,32px);box-shadow:var(--shadow);position:relative;}
+  .step::before{counter-increment:schritt;content:counter(schritt);font-family:var(--serif);font-weight:700;font-size:var(--step-3);color:var(--gold);display:block;margin-bottom:10px;}
+  .step h3{font-size:var(--step-2);margin-bottom:8px;}
+  .step p{color:var(--ink-soft);}
+  .step a{color:var(--gold-deep);font-weight:600;white-space:nowrap;}
+  .step a:hover{text-decoration:underline;text-underline-offset:3px;}
+
+  /* ═══ 11 · FAQ ═══ */
+  .faq-list{max-width:760px;}
+  .faq-list details{border-bottom:1px solid var(--line);}
+  .faq-list details:first-child{border-top:1px solid var(--line);}
+  .faq-list summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 4px;font-family:var(--serif);font-weight:600;font-size:var(--step-1);min-height:48px;transition:color .2s var(--ease);}
+  .faq-list summary::-webkit-details-marker{display:none;}
+  .faq-list summary:hover{color:var(--gold-deep);}
+  .faq-list summary::after{content:"+";font-family:var(--sans);font-weight:400;font-size:26px;color:var(--gold-deep);flex:none;transition:transform .3s var(--ease);line-height:1;}
+  .faq-list details[open] summary::after{transform:rotate(45deg);}
+  .faq-list details > p{padding:0 4px 22px;color:var(--ink-soft);max-width:62ch;}
+  .faq-list details > p a{color:var(--gold-deep);font-weight:600;}
+  .faq-list details > p a:hover{text-decoration:underline;text-underline-offset:3px;}
+
+  /* ═══ 12 · KONTAKT & ANFAHRT ═══ */
+  .kontakt-grid{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:20px;align-items:stretch;}
+  .k-card{background:var(--warm-white);border:1px solid var(--line);border-radius:var(--radius-lg);padding:clamp(24px,3vw,34px);box-shadow:var(--shadow);display:flex;flex-direction:column;}
+  .k-card h3{font-size:var(--step-2);margin-bottom:6px;}
+  .k-card .sub{color:var(--ink-soft);font-size:var(--step-0);}
+  .tel-big{display:inline-flex;align-items:center;gap:12px;font-family:var(--serif);font-weight:700;font-size:var(--step-3);color:var(--ink);margin:18px 0 6px;letter-spacing:-.01em;}
+  .tel-big:hover{color:var(--gold-deep);}
+  .tel-big svg{width:.85em;height:.85em;color:var(--gold-deep);flex:none;}
+  .k-status{font-size:var(--step--1);color:var(--ink-soft);display:flex;align-items:center;gap:8px;margin-bottom:14px;min-height:1.4em;}
+  .k-status .dot{width:8px;height:8px;border-radius:50%;background:var(--sage);flex:none;}
+  .k-status.zu .dot{background:#B5764A;}
+  .k-hint{font-size:var(--step--1);color:var(--ink-faint);margin-top:auto;padding-top:14px;border-top:1px dashed var(--line);}
+  /* HIER: Öffnungszeiten ändern → Tabelle + JS-Daten (unten) + JSON-LD (oben) zusammen pflegen! */
+  .zeiten{width:100%;border-collapse:collapse;margin-top:14px;}
+  .zeiten td{padding:9px 2px;border-bottom:1px solid var(--line);font-size:var(--step-0);vertical-align:top;}
+  .zeiten tr:last-child td{border-bottom:none;}
+  .zeiten td:first-child{font-weight:600;width:5.2em;}
+  .zeiten td:last-child{text-align:right;color:var(--ink-soft);white-space:nowrap;}
+  .zeiten tr.heute td{color:var(--gold-deep);font-weight:600;}
+  .zeiten .zu{color:var(--ink-faint);}
+  .adresse{font-style:normal;line-height:1.7;margin:14px 0 18px;font-size:var(--step-1);}
+  .adresse b{font-family:var(--serif);font-size:var(--step-2);font-weight:600;display:block;margin-bottom:4px;}
+  .k-card .btn{margin-top:auto;}
+  .anfahrt-tipp{font-size:var(--step--1);color:var(--ink-soft);margin-bottom:18px;display:flex;gap:8px;align-items:flex-start;}
+  .anfahrt-tipp svg{flex:none;width:18px;height:18px;color:var(--gold-deep);margin-top:2px;}
+
+  /* ═══ 13 · FOOTER ═══ */
+  footer{background:var(--night);color:var(--bone-dim);padding:clamp(48px,7vw,72px) 0 110px;}
+  .foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:36px;}
+  .foot-brand .wm{color:var(--bone);font-size:24px;}
+  .foot-brand .wm .gold{color:var(--gold);}
+  .foot-brand .brand-mark{width:30px;}
+  .foot-brand p{font-size:var(--step--1);line-height:1.8;margin-top:14px;color:var(--bone-dim);}
+  .foot-col h4{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px;}
+  .foot-col a,.foot-col span{display:block;color:var(--bone-dim);padding:4px 0;font-size:var(--step--1);}
+  .foot-col a:hover{color:var(--bone);}
+  .foot-bottom{margin-top:clamp(36px,5vw,52px);padding-top:22px;border-top:1px solid var(--line-d);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px;color:#9C8F78;}
+
+  /* ═══ Sticky-Mobilleiste ═══ */
+  .sticky-bar{display:none;}
+  @media (max-width:700px){
+    .sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:120;display:grid;grid-template-columns:1.3fr 1fr 1fr;background:rgba(36,29,20,.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:10px 10px calc(10px + env(safe-area-inset-bottom));gap:8px;box-shadow:0 -8px 30px -12px rgba(0,0,0,.4);}
+    .sticky-bar a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:12px;font-size:14.5px;font-weight:600;color:var(--bone);background:rgba(244,237,221,.08);}
+    .sticky-bar a svg{width:18px;height:18px;flex:none;}
+    .sticky-bar a.call{background:var(--gold);color:#241D14;}
+    body{padding-bottom:74px;}
+  }
+
+  /* ═══ Fokus (A11y) ═══ */
+  :where(a,button,summary):focus-visible{outline:none;box-shadow:var(--focus);border-radius:var(--radius-sm);}
+  .btn:focus-visible{box-shadow:var(--focus), 0 16px 30px -14px rgba(44,37,28,.55);border-radius:var(--radius-pill);}
+  .skip{position:absolute;left:-999px;top:10px;z-index:300;background:var(--ink);color:var(--paper);padding:12px 18px;border-radius:var(--radius-sm);font-weight:600;}
+  .skip:focus{left:14px;}
+
+  /* ═══ Reveals (nur mit JS; ohne JS bleibt alles sichtbar) ═══ */
+  .js .reveal > .wrap{opacity:0;transform:translateY(20px);transition:opacity .65s var(--ease),transform .65s var(--ease);}
+  .js .reveal.in > .wrap{opacity:1;transform:none;}
+  .js .reveal .stagger > *{opacity:0;transform:translateY(14px);transition:opacity .55s var(--ease),transform .55s var(--ease);}
+  .js .reveal.in .stagger > *{opacity:1;transform:none;}
+  .js .reveal.in .stagger > *:nth-child(2){transition-delay:.07s;}
+  .js .reveal.in .stagger > *:nth-child(3){transition-delay:.14s;}
+  .js .reveal.in .stagger > *:nth-child(4){transition-delay:.21s;}
+
+  /* ═══ Responsive ═══ */
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:clamp(24px,5vw,40px);}
+    .hero-visual{order:-1;}
+    .spiral-stage{width:min(260px,62vw);margin-inline:auto;}
+    .hero{min-height:auto;padding-top:calc(var(--nav-h) + var(--sp-4));}
+    .hero-hint{display:none;}
+    .nav-links{position:fixed;inset:var(--nav-h) 0 auto 0;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:8px 5vw 22px;transform:translateY(-14px);opacity:0;pointer-events:none;transition:.3s var(--ease);box-shadow:0 30px 50px -30px rgba(44,37,28,.3);}
+    .nav-links.open{transform:none;opacity:1;pointer-events:auto;}
+    .nav-links a:not(.btn){padding:15px 2px;border-bottom:1px solid var(--line);font-size:16px;}
+    .nav-links a:not(.btn)::after{display:none;}
+    .nav-links .btn{margin-top:14px;justify-content:center;}
+    .nav-toggle{display:block;}
+    .nav{background:rgba(247,241,230,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}
+    .trust-grid{grid-template-columns:1fr 1fr;}
+    .cards,.steps{grid-template-columns:1fr;}
+    .pf-grid,.um-grid{grid-template-columns:1fr;}
+    .pf-visual{order:-1;min-height:0;}
+    .botanik{width:min(280px,70vw);}
+    .um-frame{max-width:340px;margin-inline:auto;}
+    .stimmen-grid,.kontakt-grid{grid-template-columns:1fr;}
+    .foot-top{grid-template-columns:1fr 1fr;}
+    .foot-brand{grid-column:1 / -1;}
+  }
+  @media (max-width:540px){
+    .trust-grid{grid-template-columns:1fr;}
+    .hero-cta{flex-direction:column;align-items:stretch;}
+    .hero-cta .btn{justify-content:center;}
+    .foot-top{grid-template-columns:1fr;}
+    .foot-bottom{flex-direction:column;align-items:flex-start;}
+  }
+
+  /* ═══ Reduced Motion: alles ruhig ═══ */
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
+    .js .spiral-draw{stroke-dasharray:none;stroke-dashoffset:0;}
+    .js .reveal > .wrap,.js .reveal .stagger > *{opacity:1;transform:none;}
+  }
+
+  /* ═══ Print: Aushang fürs Schaufenster (Kontakt · Zeiten · Anfahrt) ═══ */
+  @media print{
+    .nav,.sticky-bar,.hero-visual,.hero-hint,.hero-cta,.pf,.zitat,.stimmen,.faq,.ablauf,footer .foot-col:last-child,body::after{display:none !important;}
+    body{background:#fff;color:#000;font-size:11pt;padding:0;}
+    section{padding:14pt 0;page-break-inside:avoid;}
+    .hero{min-height:0;padding-top:10pt;}
+    .card,.k-card,.trust{box-shadow:none;border:1px solid #999;}
+    footer{background:#fff;color:#000;padding:10pt 0;}
+    a[href^="tel"]::after{content:" (" attr(href) ")";font-size:9pt;}
+  }
+  </style>
+</head>
+
+<body id="top">
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+
+  <!-- ═══ NAV ═══ -->
+  <header class="nav" id="nav">
+    <nav class="wrap nav-in" aria-label="Hauptnavigation">
+      <a class="brand" href="#top">
+        <!-- Signet: Goldener-Schnitt-Spirale = Locke -->
+        <svg class="brand-mark" viewBox="-2 -2 38 25" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M0 21 A21 21 0 0 1 21 0 A13 13 0 0 1 34 13 A8 8 0 0 1 26 21 A5 5 0 0 1 21 16 A3 3 0 0 1 24 13 A2 2 0 0 1 26 15 A1 1 0 0 1 25 16"/>
+        </svg>
+        <span>
+          <span class="wm"><span class="gold">Gold</span>schnitt</span>
+          <span class="wm-sub">Naturfrisör · Kaufering</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="nav-links">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#pflanzenfarbe">Pflanzenfarbe</a>
+        <a href="#ueber-mich">Über mich</a>
+        <a href="#kontakt">Kontakt</a>
+        <!-- HIER: Telefonnummer (taucht 6× auf der Seite auf — Suche nach 64102) -->
+        <a class="btn" href="tel:+49819164102"><svg class="tel-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 08191 / 64102</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ═══ HERO ═══ -->
+    <section class="hero" aria-label="Willkommen">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <span class="eyebrow">Naturfrisör Goldschnitt · Kaufering bei Landsberg</span>
+            <h1>Schneiden mit <em>Zeit</em>.<br>Färben mit <em>Pflanzen</em>.</h1>
+            <p class="hero-sub lead">Schnitt, Pflege und Pflanzenhaarfarbe von Friseurmeisterin Tatjana Wackenhut — seit über einem Jahrzehnt in Kaufering. Mit Naturkosmetik, Handwerk und der Ruhe, die Ihr Haar verdient.</p>
+            <div class="hero-cta">
+              <a class="btn" href="tel:+49819164102"><svg class="tel-ico" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 08191 / 64102 anrufen</a>
+              <a class="btn btn-ghost" href="#leistungen">Meine Leistungen</a>
+            </div>
+            <p class="hero-status" id="status-hero"><span class="dot" aria-hidden="true"></span><span class="txt">Termine nach telefonischer Vereinbarung</span></p>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="spiral-stage">
+              <!-- Die Goldene-Schnitt-Spirale: Fibonacci-Radien 21·13·8·5·3·2·1 — Marke & Locke zugleich -->
+              <svg class="spiral-svg" viewBox="-3 -3 40 27" fill="none" stroke="currentColor" stroke-linecap="round">
+                <path class="spiral-draw" pathLength="1" stroke-width="1.1" d="M0 21 A21 21 0 0 1 21 0 A13 13 0 0 1 34 13 A8 8 0 0 1 26 21 A5 5 0 0 1 21 16 A3 3 0 0 1 24 13 A2 2 0 0 1 26 15 A1 1 0 0 1 25 16"/>
+                <path class="spiral-draw" pathLength="1" stroke-width=".45" stroke-opacity=".5" d="M21 0 L21 21 M21 13 L34 13 M26 13 L26 21 M21 16 L26 16 M24 13 L24 16" />
+                <circle cx="25.4" cy="15.4" r=".7" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="hero-hint" aria-hidden="true">Entdecken</span>
+    </section>
+
+    <!-- ═══ VERTRAUENSLEISTE ═══ -->
+    <div class="trustbar reveal" aria-label="Auf einen Blick">
+      <div class="wrap">
+        <div class="trust-grid stagger">
+          <!-- VOM KUNDEN ZU PRÜFEN: Meistertitel (Quelle: Familien-Briefing 11.06.2026) — vor Go-Live bestätigen -->
+          <div class="trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5.2"/><path d="M9.5 12.6 7.5 21l4.5-2.6L16.5 21l-2-8.4"/><path d="M9.8 8 11.2 9.4 14.2 6.4"/></svg><div><b>Friseurmeisterin</b><span>Ihr Haar in Meisterhand</span></div></div>
+          <div class="trust"><svg viewBox="-2 -2 38 25" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M0 21 A21 21 0 0 1 21 0 A13 13 0 0 1 34 13 A8 8 0 0 1 26 21 A5 5 0 0 1 21 16 A3 3 0 0 1 24 13"/></svg><div><b>Seit über 10 Jahren</b><span>Naturfrisör in Kaufering</span></div></div>
+          <!-- VOM KUNDEN ZU PRÜFEN: CULUMNATURA-Partnerstatus heute (Logos stehen auf der Altseite) -->
+          <div class="trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21 C 5 17 3.5 10 4.5 4.5 C 10 3.5 17 5 21 12 C 18 18 14 20.5 12 21Z"/><path d="M4.5 4.5 C 9 9 14 14 21 12"/></svg><div><b>CULUMNATURA</b><span>Naturkosmetik für Haut &amp; Haar</span></div></div>
+          <!-- VOM KUNDEN ZU PRÜFEN: 4,9★/29 — Quelle werkenntdenbesten.de (11.06.2026), live in Google Maps gegenprüfen -->
+          <div class="trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.6 14.9 8.6 21.4 9.5 16.7 14.1 17.8 20.6 12 17.5 6.2 20.6 7.3 14.1 2.6 9.5 9.1 8.6Z"/></svg><div><b>4,9 von 5 Sternen</b><span>Google-Rezensionen</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ LEISTUNGEN ═══ -->
+    <!-- HIER: Leistungen ergänzen/ändern (Inventar: „Eine Auswahl meiner Leistungen") -->
+    <section class="cream-bg reveal" id="leistungen">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">Meine Leistungen</span>
+          <h2>Was ich für Ihr Haar tun kann.</h2>
+          <p class="lead">Eine Auswahl — was Ihr Haar wirklich braucht, finden wir am besten gemeinsam heraus.</p>
+        </div>
+        <div class="cards stagger">
+          <article class="card">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.6"/><circle cx="6" cy="18" r="2.6"/><path d="M8.2 7.6 20 19.4 M8.2 16.4 20 4.6 M13.3 11.4 14.7 12.6"/></svg></div>
+            <h3>Schnitt &amp; Styling</h3>
+            <p>Ein Schnitt, der auch morgen früh noch sitzt — weil er zu Ihrem Haar passt und nicht zur Schablone. Waschen, schneiden, föhnen: mit Ruhe und Blick fürs Detail.</p>
+            <ul class="tags" aria-label="Leistungen in diesem Bereich"><li class="tag">Waschen · Schneiden · Föhnen</li><li class="tag">Trockenschnitt</li></ul>
+          </article>
+          <article class="card">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21 C 6.5 17.5 5 11.5 5.8 6.2 C 11 5.4 17 6.8 20.2 12.6 C 17.6 17.8 14 20.4 12 21Z"/><path d="M5.8 6.2 C 9.5 10 14 13.6 20.2 12.6"/><path d="M9 3.2 9.8 5 M14 2.6 14.4 4.6"/></svg></div>
+            <h3>Pflanzenhaarfarbe</h3>
+            <p>Färben mit dem, was die Natur hergibt: Blätter, Blüten, Wurzeln. Warme, lebendige Töne im Einklang mit Ihrem Naturhaar — und eine ehrliche Beratung vorab.</p>
+            <ul class="tags" aria-label="Leistungen in diesem Bereich"><li class="tag">Pflanzenfarbe</li><li class="tag">Beratung zuerst</li></ul>
+            <a class="more" href="#pflanzenfarbe">Warum Pflanzenfarbe? <span aria-hidden="true">↓</span></a>
+          </article>
+          <article class="card">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14 C 4 9 7.5 5.5 12 5.5 C 16.5 5.5 20 9 20 14"/><path d="M12 5.5 V 3 M7 6.8 5.8 4.8 M17 6.8 18.2 4.8"/><path d="M4 17.5 H 20 M6.5 21 H 17.5"/></svg></div>
+            <h3>Wohlfühlen &amp; Anlässe</h3>
+            <p>Eine festliche Hochsteckfrisur, kunstvoll Geflochtenes — oder eine Bürstenkopfmassage, bei der Sie einfach mal die Augen zumachen dürfen.</p>
+            <ul class="tags" aria-label="Leistungen in diesem Bereich"><li class="tag">Hochstecken / Flechten</li><li class="tag">Bürstenkopfmassage</li></ul>
+          </article>
+        </div>
+        <!-- HIER: Preise — sobald Tatjana eine Preisliste freigibt, eigene Sektion einbauen -->
+        <p class="cards-note">Sie vermissen etwas? Fragen Sie einfach — die Liste ist nur eine Auswahl. Und die Preise? Nenne ich Ihnen ehrlich und vorab: <a href="tel:+49819164102" style="color:var(--gold-deep);font-weight:600;">am Telefon</a> oder direkt im Salon.</p>
+      </div>
+    </section>
+
+    <!-- ═══ PFLANZENFARBE — das Herzstück ═══ -->
+    <section class="pf dark reveal" id="pflanzenfarbe">
+      <div class="wrap">
+        <div class="pf-grid">
+          <div>
+            <span class="eyebrow">Das Herzstück</span>
+            <h2 style="font-size:var(--step-4);margin-top:var(--sp-2);">Farbe, die aus der Natur kommt.</h2>
+            <p class="lead" style="margin-top:var(--sp-3);">Pflanzenhaarfarbe wird aus gemahlenen Blättern, Blüten, Rinden und Wurzeln angerührt — Henna, Indigo, Kamille, Walnuss. Statt die Haarstruktur aufzubrechen, legt sie sich wie ein feiner Schleier um jedes einzelne Haar. Das Ergebnis: Töne mit Tiefe und ein Glanz, der von Natur aus kommt.</p>
+            <div class="pf-points stagger">
+              <div class="pf-point"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.2-.7L3 21l1.8-5.8a8.4 8.4 0 1 1 16.2-3.7z"/></svg><div><b>Beratung zuerst</b><p>Ob Pflanzenfarbe zu Ihrem Haar passt — gerade nach chemischer Farbe — klären wir vorher. Ehrlich und in Ruhe.</p></div></div>
+              <div class="pf-point"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 C 14.5 7 19 8.5 19 13.5 A 7 7 0 0 1 5 13.5 C 5 8.5 9.5 7 12 3Z"/></svg><div><b>So individuell wie Sie</b><p>Pflanzenfarbe arbeitet mit Ihrem Naturton zusammen. Jedes Ergebnis ist ein Unikat — kein Farbton von der Stange.</p></div></div>
+              <div class="pf-point"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 12 C 6 7.5 9 5.5 12 5.5 C 15 5.5 18 7.5 20.5 12 C 18 16.5 15 18.5 12 18.5 C 9 18.5 6 16.5 3.5 12Z"/><circle cx="12" cy="12" r="2.6"/></svg><div><b>Auch bei grauem Haar</b><p>Pflanzenfarbe kann graue Strähnen weich einbinden — schimmernd statt hart deckend. Was bei Ihnen möglich ist, zeigt die Beratung.</p></div></div>
+            </div>
+            <p class="pf-note"><b>Gut zu wissen:</b> Pflanzenfarbe ist Handwerk — sie braucht etwas mehr Zeit als Färben aus der Tube. Diese Zeit bekommen Sie bei mir.</p>
+            <div class="pf-cta"><a class="btn" href="tel:+49819164102">08191 / 64102 anrufen</a></div>
+          </div>
+          <div class="pf-visual" aria-hidden="true">
+            <!-- Botanik-Stillleben: Kamille · Blattzweig · Pigmentschale (eigene Strichzeichnung) -->
+            <svg class="botanik" viewBox="0 0 300 320" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <!-- Kamille (außen positioniert, innen animiert — v1.2-Regel) -->
+              <g transform="translate(60 30)">
+                <g class="sway">
+                  <path d="M30 240 C 28 160 32 90 30 40"/>
+                  <path d="M30 110 C 12 100 6 86 8 70 M30 150 C 48 140 56 124 54 106"/>
+                  <circle cx="30" cy="34" r="10" fill="currentColor" fill-opacity=".25"/>
+                  <path d="M30 22 V 8 M41 26 50 16 M44 36 58 34 M19 26 10 16 M16 36 2 34 M40 44 50 52 M20 44 10 52"/>
+                </g>
+              </g>
+              <!-- Blattzweig -->
+              <g transform="translate(150 60)">
+                <g class="sway s2">
+                  <path d="M40 210 C 44 150 38 90 42 30"/>
+                  <path d="M42 60 C 58 52 66 38 64 22 C 48 26 42 42 42 60Z" fill="currentColor" fill-opacity=".14"/>
+                  <path d="M41 110 C 25 102 17 88 19 72 C 35 76 41 92 41 110Z" fill="currentColor" fill-opacity=".14"/>
+                  <path d="M42 160 C 58 152 66 138 64 122 C 48 126 42 142 42 160Z" fill="currentColor" fill-opacity=".14"/>
+                </g>
+              </g>
+              <!-- Indigo-Zweig klein -->
+              <g transform="translate(216 120)">
+                <g class="sway s3">
+                  <path d="M20 150 C 18 110 22 70 20 40"/>
+                  <circle cx="10" cy="56" r="4" fill="currentColor" fill-opacity=".3"/><circle cx="30" cy="70" r="4" fill="currentColor" fill-opacity=".3"/><circle cx="9" cy="88" r="4" fill="currentColor" fill-opacity=".3"/><circle cx="31" cy="102" r="4" fill="currentColor" fill-opacity=".3"/>
+                </g>
+              </g>
+              <!-- Pigmentschale -->
+              <path d="M70 282 C 70 268 96 260 150 260 C 204 260 230 268 230 282 C 230 296 204 304 150 304 C 96 304 70 296 70 282Z" stroke-width="1.8"/>
+              <path d="M96 276 C 110 270 130 267 150 267 M150 267 C 174 267 196 271 206 277" stroke-opacity=".55"/>
+              <circle cx="120" cy="284" r="2.2" fill="currentColor" stroke="none" fill-opacity=".8"/><circle cx="150" cy="288" r="2.2" fill="currentColor" stroke="none" fill-opacity=".55"/><circle cx="180" cy="283" r="2.2" fill="currentColor" stroke="none" fill-opacity=".8"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ÜBER MICH ═══ -->
+    <!-- HIER: Über-mich-Text — VOM KUNDEN ZU PRÜFEN (neu geschrieben; Altseite hatte keinen. Fakten belegt: >10 Jahre [Website ab 2013, golocal 2012], Hurlach-Anfänge [Wayback], CULUMNATURA [Altseite], Meisterin [Familien-Briefing]) -->
+    <section class="reveal" id="ueber-mich">
+      <div class="wrap">
+        <div class="um-grid">
+          <figure class="um-frame">
+            <!-- Platzhalter im Spiegel-Bogen: hier kommt Tatjanas Porträt hin -->
+            <svg viewBox="0 0 200 240" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+              <path d="M30 230 V 110 a70 70 0 0 1 140 0 V 230" stroke-opacity=".7"/>
+              <path d="M44 230 V 112 a56 56 0 0 1 112 0 V 230" stroke-opacity=".3"/>
+              <g transform="translate(64 92)">
+                <path d="M0 36 A36 36 0 0 1 36 0 A22.2 22.2 0 0 1 58.2 22.2 A13.7 13.7 0 0 1 44.5 35.9 A8.5 8.5 0 0 1 36 27.4 A5.2 5.2 0 0 1 41.2 22.2" stroke-width="2.2"/>
+              </g>
+              <path d="M58 196 C 76 188 124 188 142 196" stroke-opacity=".5"/>
+            </svg>
+            <figcaption>Hier fehlt noch ein schönes Foto von Tatjana — das machen wir gemeinsam.</figcaption>
+          </figure>
+          <div class="um-copy">
+            <span class="eyebrow">Über mich</span>
+            <h2 style="font-size:var(--step-4);margin-top:var(--sp-2);margin-bottom:var(--sp-3);">Hinter der Schere: Tatjana Wackenhut.</h2>
+            <p class="lead">Seit über einem Jahrzehnt gibt es den Goldschnitt — angefangen hat alles im Nachbarort Hurlach, heute finden Sie mich mitten in Kaufering, in der Kolpingstraße 36.</p>
+            <p class="lead">Ich bin Friseurmeisterin — und überzeugt, dass gutes Handwerk vor allem eines braucht: Zeit. Zeit zum Zuhören, bevor die Schere ansetzt. Zeit für ehrliche Beratung, bevor Farbe ins Spiel kommt. Deshalb arbeite ich mit Pflanzenhaarfarbe und Naturkosmetik von CULUMNATURA — und nehme mir für Sie den Raum, den Ihr Haar verdient.</p>
+            <ul class="quali" aria-label="Qualifikationen">
+              <li>Friseurmeisterin</li>
+              <li>Pflanzenfarbe im Angebot seit 2013</li>
+              <li>CULUMNATURA-Naturkosmetik</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FUNDSTÜCK — ihr Satz, große Bühne ═══ -->
+    <section class="cream-bg zitat reveal" aria-label="Zitat von Tatjana Wackenhut">
+      <div class="wrap">
+        <figure>
+          <blockquote>Am besten Sie überzeugen sich selbst von der Vielfalt an Möglichkeiten in meinem Salon.</blockquote>
+          <figcaption><b>Tatjana Wackenhut</b> · Goldschnitt, Kaufering</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ═══ STIMMEN ═══ -->
+    <section class="stimmen reveal" id="stimmen">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">Stimmen</span>
+          <h2>Das sagen Kundinnen und Kunden.</h2>
+        </div>
+        <div class="stimmen-grid stagger">
+          <!-- VOM KUNDEN ZU PRÜFEN: Rating live in Google Maps verifizieren (Quelle: werkenntdenbesten.de, 11.06.2026) -->
+          <div class="rating-card">
+            <div class="num">4,9</div>
+            <div class="stars" role="img" aria-label="4,9 von 5 Sternen">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6 14.9 8.6 21.4 9.5 16.7 14.1 17.8 20.6 12 17.5 6.2 20.6 7.3 14.1 2.6 9.5 9.1 8.6Z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6 14.9 8.6 21.4 9.5 16.7 14.1 17.8 20.6 12 17.5 6.2 20.6 7.3 14.1 2.6 9.5 9.1 8.6Z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6 14.9 8.6 21.4 9.5 16.7 14.1 17.8 20.6 12 17.5 6.2 20.6 7.3 14.1 2.6 9.5 9.1 8.6Z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6 14.9 8.6 21.4 9.5 16.7 14.1 17.8 20.6 12 17.5 6.2 20.6 7.3 14.1 2.6 9.5 9.1 8.6Z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6 14.9 8.6 21.4 9.5 16.7 14.1 17.8 20.6 12 17.5 6.2 20.6 7.3 14.1 2.6 9.5 9.1 8.6Z"/></svg>
+            </div>
+            <div class="lbl">von 5 Sternen · Google-Rezensionen</div>
+          </div>
+          <figure class="quote-card">
+            <p>„Ein sehr netter Service!"</p>
+            <footer>Peter · Google-Rezension</footer>
+          </figure>
+          <figure class="quote-card">
+            <p>„Nette Bedienung, kompetenter Service."</p>
+            <footer>Oliver W. · Google-Rezension</footer>
+          </figure>
+        </div>
+        <p class="stimmen-src">Quelle: öffentliche Google-Rezensionen (Stand Juni 2026).</p>
+      </div>
+    </section>
+
+    <!-- ═══ ABLAUF ═══ -->
+    <section class="cream-bg ablauf reveal" id="ablauf">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">So einfach geht's</span>
+          <h2>In drei Schritten zu gutem Haar.</h2>
+        </div>
+        <div class="steps stagger">
+          <div class="step"><h3>Kurz anrufen</h3><p>Ein Anruf genügt: <a href="tel:+49819164102">08191 / 64102</a>. Gemeinsam finden wir einen Termin, der in Ihren Tag passt.</p></div>
+          <div class="step"><h3>Ankommen &amp; beraten</h3><p>Wir schauen zusammen: Was braucht Ihr Haar? Bei Pflanzenfarbe nehme ich mir für die erste Beratung besonders viel Zeit.</p></div>
+          <div class="step"><h3>Zeit für Sie</h3><p>Schneiden, färben, durchatmen — ohne Hektik. Sie gehen mit einem Ergebnis nach Hause, das sich nach Ihnen anfühlt.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FAQ ═══ -->
+    <section class="faq reveal" id="faq">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">Gut zu wissen</span>
+          <h2>Häufige Fragen.</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Brauche ich einen Termin?</summary>
+            <p>Rufen Sie am besten kurz an: <a href="tel:+49819164102">08191 / 64102</a>. So bekommen Sie Ihren Wunschtermin — und ich kann mir die Zeit für Sie freihalten.</p>
+          </details>
+          <details>
+            <summary>Was kostet ein Besuch bei Ihnen?</summary>
+            <p>Das hängt ehrlich davon ab, was Ihr Haar braucht — Länge, Aufwand, Leistung. Am Telefon bekommen Sie vorab eine klare Auskunft, damit es hinterher keine Überraschung gibt.</p>
+          </details>
+          <details>
+            <summary>Was genau ist Pflanzenhaarfarbe?</summary>
+            <p>Farbe aus gemahlenen Pflanzen — etwa Henna, Indigo oder Kamille —, die sich um das Haar legt, statt es chemisch aufzubrechen. Mehr dazu im Abschnitt <a href="#pflanzenfarbe">Pflanzenfarbe</a>.</p>
+          </details>
+          <details>
+            <summary>Ich färbe bisher chemisch — kann ich wechseln?</summary>
+            <p>Oft ja, aber nicht immer sofort: Chemisch behandeltes Haar braucht manchmal eine Übergangszeit. Genau dafür ist die Beratung da — wir schauen uns Ihr Haar an und besprechen ehrlich, was jetzt schon geht.</p>
+          </details>
+          <details>
+            <summary>Deckt Pflanzenfarbe auch graue Haare?</summary>
+            <p>Pflanzenfarbe kann graue Strähnen weich einbinden — wie gut, hängt von Ausgangston und Haarzustand ab. In der Beratung zeige ich Ihnen, was bei Ihrem Haar möglich ist.</p>
+          </details>
+          <details>
+            <summary>Wie finde ich den Salon?</summary>
+            <p>Kolpingstraße 36 in Kaufering — nur ein paar Minuten von der B17. Alle Details unter <a href="#anfahrt">Anfahrt</a>.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ KONTAKT & ANFAHRT ═══ -->
+    <section class="cream-bg reveal" id="kontakt">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">Kontakt</span>
+          <h2>Rufen Sie einfach an.</h2>
+          <p class="lead">Termine vergebe ich persönlich am Telefon — so finden wir gemeinsam die Zeit, die zu Ihnen passt.</p>
+        </div>
+        <div class="kontakt-grid stagger">
+          <div class="k-card">
+            <h3>Telefon</h3>
+            <p class="sub">Am liebsten persönlich:</p>
+            <a class="tel-big" href="tel:+49819164102"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>08191 / 64102</a>
+            <p class="k-status" id="status-kontakt"><span class="dot" aria-hidden="true"></span><span class="txt">Termine nach telefonischer Vereinbarung</span></p>
+            <p class="k-hint">Wenn ich gerade an der Schere bin, klingelt es manchmal ins Leere — probieren Sie es einfach etwas später noch einmal.</p>
+          </div>
+          <div class="k-card">
+            <h3>Öffnungszeiten</h3>
+            <!-- HIER: Öffnungszeiten (Stand „ab 05.02.24" lt. Altseite — auch JS unten + JSON-LD oben pflegen!) -->
+            <table class="zeiten">
+              <tr data-tag="1"><td>Montag</td><td>8–12 &amp; 15–20 Uhr</td></tr>
+              <tr data-tag="2"><td>Dienstag</td><td>8–12 &amp; 14–18 Uhr</td></tr>
+              <tr data-tag="3"><td>Mittwoch</td><td>8–12 &amp; 14–18 Uhr</td></tr>
+              <tr data-tag="4"><td>Donnerstag</td><td class="zu">geschlossen</td></tr>
+              <tr data-tag="5"><td>Freitag</td><td>8–12 &amp; 14–18 Uhr</td></tr>
+              <tr data-tag="6"><td>Samstag</td><td>8–12:30 Uhr</td></tr>
+              <tr data-tag="0"><td>Sonntag</td><td class="zu">geschlossen</td></tr>
+            </table>
+          </div>
+          <div class="k-card" id="anfahrt">
+            <h3>Anfahrt</h3>
+            <address class="adresse">
+              <b>Goldschnitt</b>
+              Kolpingstraße 36<br>
+              86916 Kaufering
+            </address>
+            <p class="anfahrt-tipp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Mitten in Kaufering, nur ein paar Minuten von der B17.</p>
+            <!-- Bewusst kein Karten-Embed: keine Google-Cookies, kein Banner nötig. -->
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Goldschnitt%2C%20Kolpingstra%C3%9Fe%2036%2C%2086916%20Kaufering" target="_blank" rel="noopener">Route in Google Maps öffnen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="brand" href="#top">
+            <svg class="brand-mark" viewBox="-2 -2 38 25" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <path d="M0 21 A21 21 0 0 1 21 0 A13 13 0 0 1 34 13 A8 8 0 0 1 26 21 A5 5 0 0 1 21 16 A3 3 0 0 1 24 13 A2 2 0 0 1 26 15 A1 1 0 0 1 25 16"/>
+            </svg>
+            <span class="wm"><span class="gold">Gold</span>schnitt</span>
+          </a>
+          <p>Naturfrisör · Inhaberin Tatjana Wackenhut<br>Kolpingstraße 36 · 86916 Kaufering<br>Telefon: <a href="tel:+49819164102" style="color:var(--bone);">08191 / 64102</a></p>
+        </div>
+        <div class="foot-col">
+          <h4>Öffnungszeiten</h4>
+          <span>Mo 8–12 &amp; 15–20 Uhr</span>
+          <span>Di–Mi, Fr 8–12 &amp; 14–18 Uhr</span>
+          <span>Sa 8–12:30 Uhr</span>
+          <span>Do &amp; So geschlossen</span>
+        </div>
+        <div class="foot-col">
+          <h4>Rechtliches</h4>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Goldschnitt · Tatjana Wackenhut, Kaufering</span>
+        <span>Ohne Cookies, ohne Tracking — dafür mit Zeit gemacht. <span style="color:var(--gold);">⌀</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ Sticky-Mobilleiste ═══ -->
+  <nav class="sticky-bar" aria-label="Schnellzugriff">
+    <a class="call" href="tel:+49819164102"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Anrufen</a>
+    <a href="#kontakt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.5 2"/></svg> Zeiten</a>
+    <a href="#anfahrt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Anfahrt</a>
+  </nav>
+
+  <script>
+  /* Burger-Menü */
+  (function(){
+    var t=document.querySelector('.nav-toggle'),l=document.getElementById('nav-links');
+    if(!t||!l)return;
+    t.addEventListener('click',function(){var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen');});
+    l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');t.setAttribute('aria-expanded','false');});});
+  })();
+
+  /* Nav-Blur ab Scroll */
+  (function(){
+    var n=document.getElementById('nav');
+    function s(){n.classList.toggle('scrolled',window.scrollY>24);}
+    window.addEventListener('scroll',s,{passive:true});s();
+  })();
+
+  /* Scroll-Reveals — einmalig; reduced-motion & ohne JS: alles sofort sichtbar */
+  (function(){
+    var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches,els=document.querySelectorAll('.reveal');
+    function show(el){if(el)el.classList.add('in');}
+    if(reduce||!('IntersectionObserver' in window)){els.forEach(show);return;}
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){io.observe(el);});
+    els.forEach(function(el){var r=el.getBoundingClientRect();if(r.top<(window.innerHeight||0)&&r.bottom>0){show(el);io.unobserve(el);}});
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){show(document.querySelector(a.getAttribute('href')));});});
+  })();
+
+  /* Öffnungs-Status + Heute-Zeile — HIER: Öffnungszeiten (Minuten ab Mitternacht; Index 0=So … 6=Sa) */
+  (function(){
+    var Z=[[],[[480,720],[900,1200]],[[480,720],[840,1080]],[[480,720],[840,1080]],[],[[480,720],[840,1080]],[[480,750]]];
+    var NAME=['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
+    function fmt(m){var h=Math.floor(m/60),mm=m%60;return h+(mm?':'+(mm<10?'0':'')+mm:'')+' Uhr';}
+    var d=new Date(),tag=d.getDay(),jetzt=d.getHours()*60+d.getMinutes(),txt='',offen=false;
+    var heute=Z[tag];
+    for(var i=0;i<heute.length;i++){
+      if(jetzt>=heute[i][0]&&jetzt<heute[i][1]){offen=true;txt='Jetzt geöffnet — bis '+fmt(heute[i][1]);break;}
+      if(jetzt<heute[i][0]){txt='Heute '+(i?'wieder ':'')+'ab '+fmt(heute[i][0])+' geöffnet';break;}
+    }
+    if(!txt){
+      for(var n=1;n<=7;n++){
+        var t=(tag+n)%7;
+        if(Z[t].length){txt=(n===1?'Morgen':NAME[t])+' ab '+fmt(Z[t][0][0])+' wieder geöffnet';break;}
+      }
+    }
+    ['status-hero','status-kontakt'].forEach(function(id){
+      var el=document.getElementById(id);if(!el)return;
+      el.querySelector('.txt').textContent=txt;
+      el.classList.toggle('zu',!offen);
+    });
+    var row=document.querySelector('.zeiten tr[data-tag="'+tag+'"]');if(row)row.classList.add('heute');
+  })();
+  </script>
+</body>
+</html>

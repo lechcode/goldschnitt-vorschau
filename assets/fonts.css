@@ -1,0 +1,15 @@
+/* ============================================================
+   Goldschnitt Naturfrisör · lokal gehostete Schriften (latin)
+   DSGVO: KEINE Verbindung zu Google-Servern — alles liegt hier.
+   Fraunces (Charakter-Serif, Headlines) + Inter (Fließtext/UI)
+   Lizenz: SIL Open Font License 1.1 — s. _projekt/ASSETS-LIZENZEN.md
+   ============================================================ */
+
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/fraunces-600.woff2) format('woff2');}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/fraunces-700.woff2) format('woff2');}
+
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/inter-400.woff2) format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/inter-600.woff2) format('woff2');}
+
+/* System-Fallback gegen Layout-Shift, bis Inter geladen ist */
+@font-face{font-family:'Inter-Fallback';src:local('Helvetica Neue'),local('Arial');size-adjust:107%;ascent-override:90%;}
