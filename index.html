@@ -64,6 +64,7 @@
       "addressRegion": "Bayern",
       "addressCountry": "DE"
     },
+    "geo": { "@type": "GeoCoordinates", "latitude": 48.09486, "longitude": 10.85503 },
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "08:00", "closes": "12:00" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "15:00", "closes": "20:00" },
@@ -383,10 +384,16 @@
   .step:nth-child(3)::before{color:var(--sage-deep);}
   .quali li:nth-child(2)::before{background:var(--henna);}
   .quali li:nth-child(3)::before{background:var(--sage);}
+  .stimmen-grid .rating-card{grid-row:span 2;}
   .stimmen-grid .quote-card{border-top:3px solid var(--henna);}
-  .stimmen-grid .quote-card:last-child{border-top-color:var(--sage);}
   .stimmen-grid .quote-card footer::before{background:var(--henna);}
-  .stimmen-grid .quote-card:last-child footer::before{background:var(--sage);}
+  .stimmen-grid .quote-card:nth-child(3){border-top-color:var(--sage);}
+  .stimmen-grid .quote-card:nth-child(3) footer::before{background:var(--sage);}
+  .stimmen-grid .quote-card:nth-child(4){border-top-color:var(--gold);}
+  .stimmen-grid .quote-card:nth-child(4) footer::before{background:var(--gold);}
+  .stimmen-grid .quote-card:nth-child(5){border-top-color:var(--honey);}
+  .stimmen-grid .quote-card:nth-child(5) footer::before{background:var(--honey);}
+  .quote-card.lang p{font-size:var(--step-1);}
   .zitat blockquote::before{color:var(--henna);opacity:.4;}
 
   /* ═══ Fokus (A11y) ═══ */
@@ -528,8 +535,8 @@
           <div class="trust"><svg viewBox="-2 -2 38 25" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M0 21 A21 21 0 0 1 21 0 A13 13 0 0 1 34 13 A8 8 0 0 1 26 21 A5 5 0 0 1 21 16 A3 3 0 0 1 24 13"/></svg><div><b>Seit über 10 Jahren</b><span>Naturfrisör in Kaufering</span></div></div>
           <!-- VOM KUNDEN ZU PRÜFEN: CULUMNATURA-Partnerstatus heute (Logos stehen auf der Altseite) -->
           <div class="trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21 C 5 17 3.5 10 4.5 4.5 C 10 3.5 17 5 21 12 C 18 18 14 20.5 12 21Z"/><path d="M4.5 4.5 C 9 9 14 14 21 12"/></svg><div><b>CULUMNATURA</b><span>Naturkosmetik für Haut &amp; Haar</span></div></div>
-          <!-- VOM KUNDEN ZU PRÜFEN: 4,9★/29 — Quelle werkenntdenbesten.de (11.06.2026), live in Google Maps gegenprüfen -->
-          <div class="trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.6 14.9 8.6 21.4 9.5 16.7 14.1 17.8 20.6 12 17.5 6.2 20.6 7.3 14.1 2.6 9.5 9.1 8.6Z"/></svg><div><b>4,9 von 5 Sternen</b><span>Google-Rezensionen</span></div></div>
+          <!-- BELEGT: live in Google Maps geprüft am 12.06.2026 — 4,9★ bei 30 Bewertungen -->
+          <div class="trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.6 14.9 8.6 21.4 9.5 16.7 14.1 17.8 20.6 12 17.5 6.2 20.6 7.3 14.1 2.6 9.5 9.1 8.6Z"/></svg><div><b>4,9 von 5 Sternen</b><span>30 Google-Bewertungen</span></div></div>
         </div>
       </div>
     </div>
@@ -673,7 +680,7 @@
           <h2>Das sagen Kundinnen und Kunden.</h2>
         </div>
         <div class="stimmen-grid stagger">
-          <!-- VOM KUNDEN ZU PRÜFEN: Rating live in Google Maps verifizieren (Quelle: werkenntdenbesten.de, 11.06.2026) -->
+          <!-- BELEGT: Rating + Zitate live aus Google Maps gezogen am 12.06.2026 (4,9★, 30 Bewertungen; Zitate wörtlich, nur Vorname/Kürzel) -->
           <div class="rating-card">
             <div class="num">4,9</div>
             <div class="stars" role="img" aria-label="4,9 von 5 Sternen">
@@ -683,18 +690,26 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6 14.9 8.6 21.4 9.5 16.7 14.1 17.8 20.6 12 17.5 6.2 20.6 7.3 14.1 2.6 9.5 9.1 8.6Z"/></svg>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6 14.9 8.6 21.4 9.5 16.7 14.1 17.8 20.6 12 17.5 6.2 20.6 7.3 14.1 2.6 9.5 9.1 8.6Z"/></svg>
             </div>
-            <div class="lbl">von 5 Sternen · Google-Rezensionen</div>
+            <div class="lbl">von 5 Sternen · 30 Google-Bewertungen</div>
           </div>
-          <figure class="quote-card">
-            <p>„Ein sehr netter Service!"</p>
-            <footer>Peter · Google-Rezension</footer>
+          <figure class="quote-card lang">
+            <p>„Die Friseurin ist ausgesprochen freundlich und die Beratung ausgezeichnet. Ich war selten so zufrieden mit einem Haarschnitt."</p>
+            <footer>U. B. · Google-Rezension</footer>
           </figure>
           <figure class="quote-card">
-            <p>„Nette Bedienung, kompetenter Service."</p>
-            <footer>Oliver W. · Google-Rezension</footer>
+            <p>„Nette Friseurin, hatte spontan Zeit, guter Schnitt und fairer Preis."</p>
+            <footer>Vitti · Google-Rezension</footer>
+          </figure>
+          <figure class="quote-card">
+            <p>„Sehr sympathisch, sehr ruhige Atmosphäre — günstiger geht's heute nicht mehr. Top 👍"</p>
+            <footer>A. H. · Google-Rezension</footer>
+          </figure>
+          <figure class="quote-card">
+            <p>„Komme sehr gerne hier her. Sehr nette Damen und immer sehr zufrieden."</p>
+            <footer>Corinna · Google-Rezension</footer>
           </figure>
         </div>
-        <p class="stimmen-src">Quelle: öffentliche Google-Rezensionen (Stand Juni 2026).</p>
+        <p class="stimmen-src">Quelle: öffentliche Google-Rezensionen — live geprüft im Juni 2026 (4,9 von 5 Sternen, 30 Bewertungen).</p>
       </div>
     </section>
 

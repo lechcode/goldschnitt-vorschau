@@ -68,6 +68,15 @@ section.block{margin-top:3.2rem;}
 .tacho .lbl{font-size:.88rem;color:#CDC2AC;margin-top:.5rem;line-height:1.45;}
 .tacho .t:nth-child(2) .num{color:#D08A63;}
 .tacho .t:nth-child(3) .num{color:#9DB08A;}
+/* Logo-Auswahl */
+.logo-tiles{display:grid;gap:16px;margin-top:1.4rem;}
+.logo-tile{background:var(--warm-white);border:1px solid var(--line);border-radius:18px;padding:1.6rem 1.4rem;box-shadow:0 18px 40px -24px rgba(60,45,25,.25);display:grid;gap:.9rem;justify-items:center;text-align:center;}
+.logo-tile svg{max-width:100%;height:auto;}
+.logo-tile .lt-name{font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:1.18rem;}
+.logo-tile .lt-name b{color:var(--gold-deep);margin-right:.45em;}
+.logo-tile p{font-size:.95rem;max-width:48ch;}
+.logo-hint{text-align:center;margin-top:1.2rem;color:var(--ink-soft);}
+.logo-hint b{color:var(--gold-deep);}
 .ps{margin-top:3rem;text-align:center;}
 .ps .gruss{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.35rem;color:var(--ink);line-height:1.5;}
 footer{text-align:center;padding:1.5rem 1.2rem 3rem;font-size:.92rem;color:var(--ink-soft);}
@@ -133,6 +142,69 @@ footer b{color:var(--gold-deep);}
       <div class="t"><div class="num">10× leichter</div><div class="lbl">1,4 MB → 145 KB — schont jedes Datenvolumen</div></div>
       <div class="t"><div class="num">0 Cookies</div><div class="lbl">kein Cookie-Banner mehr nötig — und nichts wird getrackt</div></div>
     </div>
+  </section>
+
+  <section class="block">
+    <div class="block-head">
+      <span class="hand">Und dein Logo?</span>
+      <p>Du möchtest dein Logo behalten — sehr gerne! Hier sind drei Wege, wie es frisch wird, ohne sich fremd anzufühlen. Die Zutaten bleiben: <b>Schere, Locke, GOLD &amp; SCHNITT</b> und dein Rot.</p>
+    </div>
+    <div class="logo-tiles">
+      <div class="logo-tile">
+        <svg width="420" height="180" viewBox="0 0 560 240" role="img" aria-label="Logo-Variante A: rotes Schild wie bisher, frisch gezeichnet">
+          <rect width="560" height="240" rx="20" fill="#A93B2B"/>
+          <rect x="7" y="7" width="546" height="226" rx="15" fill="none" stroke="#F7EAD8" stroke-opacity=".28" stroke-width="1.5"/>
+          <g transform="translate(38 52) scale(1.06)" fill="none" stroke="#F7EAD8" stroke-linecap="round" stroke-linejoin="round">
+            <g transform="translate(10 -16) scale(.82)"><path d="M0 21 A21 21 0 0 1 21 0 A13 13 0 0 1 34 13 A8 8 0 0 1 26 21 A5 5 0 0 1 21 16 A3 3 0 0 1 24 13" stroke-width="3.4"/></g>
+            <path d="M32 10 L70 94" stroke-width="6"/>
+            <path d="M78 10 L40 94" stroke-width="6"/>
+            <circle cx="74" cy="106" r="13" stroke-width="6"/>
+            <circle cx="36" cy="106" r="13" stroke-width="6"/>
+            <circle cx="55" cy="61" r="3.6" fill="#F7EAD8" stroke="none"/>
+          </g>
+          <text x="200" y="106" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="82" letter-spacing="3" fill="#E2BC66">GOLD</text>
+          <text x="200" y="164" font-family="Fraunces, Georgia, serif" font-weight="600" font-size="50" letter-spacing="11" fill="#FBF3E4">SCHNITT</text>
+          <text x="202" y="203" font-family="Inter, sans-serif" font-weight="600" font-size="21" letter-spacing="10.5" fill="#FBF3E4" fill-opacity=".85">NATURFRISEUR</text>
+        </svg>
+        <span class="lt-name"><b>A</b>„Frisch poliert"</span>
+        <p>Dein Logo, wie du es kennst: gleiches Rot, gleiche Aufteilung — nur gestochen scharf und aufgeräumt. Stark für Schild, Tüten &amp; Print.</p>
+      </div>
+      <div class="logo-tile">
+        <svg width="440" height="120" viewBox="0 0 640 175" role="img" aria-label="Logo-Variante B: Schere mit goldener Locken-Spirale und Goldschnitt-Schriftzug">
+          <g transform="translate(16 34)" fill="none" stroke="#2C251C" stroke-linecap="round" stroke-linejoin="round">
+            <g transform="translate(16 -26)"><path d="M0 21 A21 21 0 0 1 21 0 A13 13 0 0 1 34 13 A8 8 0 0 1 26 21 A5 5 0 0 1 21 16 A3 3 0 0 1 24 13 A2 2 0 0 1 26 15" stroke="#B68B3F" stroke-width="2.8"/></g>
+            <path d="M32 10 L70 94" stroke-width="6.5"/>
+            <path d="M78 10 L40 94" stroke-width="6.5"/>
+            <circle cx="74" cy="106" r="13" stroke-width="6.5"/>
+            <circle cx="36" cy="106" r="13" stroke-width="6.5"/>
+            <circle cx="55" cy="61" r="4" fill="#B05A35" stroke="none"/>
+          </g>
+          <text x="166" y="86" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="64"><tspan fill="#B68B3F">Gold</tspan><tspan fill="#2C251C">schnitt</tspan></text>
+          <text x="169" y="127" font-family="Inter, sans-serif" font-weight="600" font-size="17.5" letter-spacing="7" fill="#2C251C" fill-opacity=".62">NATURFRISÖR · KAUFERING</text>
+        </svg>
+        <span class="lt-name"><b>B</b>„Die goldene Locke"</span>
+        <p>Deine Schere bleibt — aber die Locke darüber wird zur Gold-Spirale dieser Seite, dein Rot bleibt als Herzpunkt am Gelenk. Passt nahtlos zu allem hier.</p>
+      </div>
+      <div class="logo-tile">
+        <svg width="210" height="210" viewBox="0 0 230 230" role="img" aria-label="Logo-Variante C: rundes Siegel mit Schere, Locke und Schriftzug seit 2008">
+          <defs><path id="ringV" d="M115,115 m-93,0 a93,93 0 1,1 186,0 a93,93 0 1,1 -186,0"/></defs>
+          <circle cx="115" cy="115" r="111" fill="#FBF6EB" stroke="#A93B2B" stroke-width="3.5"/>
+          <circle cx="115" cy="115" r="76" fill="none" stroke="#B68B3F" stroke-width="1.5"/>
+          <text font-family="Inter, sans-serif" font-weight="600" font-size="14.5" letter-spacing="4.4" fill="#82622A"><textPath href="#ringV" startOffset="2">GOLDSCHNITT · NATURFRISEUR · SEIT 2008 ·</textPath></text>
+          <g transform="translate(64 56) scale(.92)" fill="none" stroke="#2C251C" stroke-linecap="round" stroke-linejoin="round">
+            <g transform="translate(10 -14) scale(.74)"><path d="M0 21 A21 21 0 0 1 21 0 A13 13 0 0 1 34 13 A8 8 0 0 1 26 21 A5 5 0 0 1 21 16 A3 3 0 0 1 24 13" stroke="#B68B3F" stroke-width="3.2"/></g>
+            <path d="M32 10 L70 94" stroke-width="5"/>
+            <path d="M78 10 L40 94" stroke-width="5"/>
+            <circle cx="74" cy="106" r="13" stroke-width="5"/>
+            <circle cx="36" cy="106" r="13" stroke-width="5"/>
+            <circle cx="55" cy="61" r="3.2" fill="#A93B2B" stroke="none"/>
+          </g>
+        </svg>
+        <span class="lt-name"><b>C</b>„Das Meister-Siegel"</span>
+        <p>Rund wie ein Stempel — mit „seit 2008" als Gruß an deinen Meisterbrief. Schön fürs Schaufenster, Visitenkarten oder als Aufkleber.</p>
+      </div>
+    </div>
+    <p class="logo-hint">Sag einfach <b>A</b>, <b>B</b> oder <b>C</b> — oder „alle drei" als kleine Logo-Familie. Wir bauen es dann überall ein. ✂️</p>
   </section>
 
   <div class="card">
