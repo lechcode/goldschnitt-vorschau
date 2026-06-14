@@ -182,6 +182,10 @@
   .wm{font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:-.01em;line-height:1;color:var(--ink);}
   .wm .gold{color:var(--gold-deep);}
   .wm-sub{display:block;font-family:var(--sans);font-weight:600;font-size:9.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-faint);margin-top:3px;}
+  /* Tatjanas Original-Logo (freigestellt), wieder in Ehren */
+  .brand-logo{height:46px;width:auto;display:block;transition:transform .4s var(--ease);}
+  .brand:hover .brand-logo{transform:scale(1.03);}
+  .foot-brand .brand-logo{height:58px;}
   .nav-links{display:flex;align-items:center;gap:26px;}
   .nav-links a:not(.btn){font-size:15px;color:var(--ink-soft);font-weight:500;position:relative;padding:4px 0;transition:color .2s var(--ease);}
   .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1.5px;background:var(--gold);transition:width .25s var(--ease);}
@@ -266,6 +270,7 @@
   .um-grid{display:grid;grid-template-columns:1fr 1.618fr;gap:clamp(32px,5vw,72px);align-items:center;}
   .um-frame{position:relative;background:var(--warm-white);border:1px solid var(--line);border-radius:200px 200px var(--radius-lg) var(--radius-lg);padding:clamp(20px,3vw,30px);box-shadow:var(--shadow);}
   .um-frame svg{width:100%;height:auto;color:var(--gold);}
+  .um-frame img{width:100%;height:auto;display:block;border-radius:184px 184px var(--radius-sm) var(--radius-sm);}
   .um-frame figcaption{text-align:center;font-size:var(--step--1);color:var(--ink-faint);margin-top:14px;font-style:italic;}
   .um-copy .lead + .lead{margin-top:var(--sp-3);}
   .quali{display:flex;flex-wrap:wrap;gap:10px;margin-top:var(--sp-4);}
@@ -469,15 +474,9 @@
   <!-- ═══ NAV ═══ -->
   <header class="nav" id="nav">
     <nav class="wrap nav-in" aria-label="Hauptnavigation">
-      <a class="brand" href="#top">
-        <!-- Signet: Goldener-Schnitt-Spirale = Locke -->
-        <svg class="brand-mark" viewBox="-2 -2 38 25" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-          <path d="M0 21 A21 21 0 0 1 21 0 A13 13 0 0 1 34 13 A8 8 0 0 1 26 21 A5 5 0 0 1 21 16 A3 3 0 0 1 24 13 A2 2 0 0 1 26 15 A1 1 0 0 1 25 16"/>
-        </svg>
-        <span>
-          <span class="wm"><span class="gold">Gold</span>schnitt</span>
-          <span class="wm-sub">Naturfrisör · Kaufering</span>
-        </span>
+      <a class="brand" href="#top" aria-label="Goldschnitt Naturfrisör — zum Seitenanfang">
+        <!-- Tatjanas Original-Logo, vom roten Kasten freigestellt -->
+        <img class="brand-logo" src="assets/img/logo-goldschnitt.png" width="771" height="334" alt="Goldschnitt Naturfrisör">
       </a>
       <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
       <div class="nav-links" id="nav-links">
@@ -636,16 +635,9 @@
       <div class="wrap">
         <div class="um-grid">
           <figure class="um-frame">
-            <!-- Platzhalter im Spiegel-Bogen: hier kommt Tatjanas Porträt hin -->
-            <svg viewBox="0 0 200 240" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
-              <path d="M30 230 V 110 a70 70 0 0 1 140 0 V 230" stroke-opacity=".7"/>
-              <path d="M44 230 V 112 a56 56 0 0 1 112 0 V 230" stroke-opacity=".3"/>
-              <g transform="translate(64 92)">
-                <path d="M0 36 A36 36 0 0 1 36 0 A22.2 22.2 0 0 1 58.2 22.2 A13.7 13.7 0 0 1 44.5 35.9 A8.5 8.5 0 0 1 36 27.4 A5.2 5.2 0 0 1 41.2 22.2" stroke-width="2.2"/>
-              </g>
-              <path d="M58 196 C 76 188 124 188 142 196" stroke-opacity=".5"/>
-            </svg>
-            <figcaption>Hier fehlt noch ein schönes Foto von Tatjana — das machen wir gemeinsam.</figcaption>
+            <!-- ERSTER ENTWURF: Tatjanas Selfie (web-optimiert). Vor Go-Live durch professionelles Foto ersetzen — material/bilder/ -->
+            <img src="assets/img/tatjana.jpg" width="720" height="900" loading="lazy" alt="Tatjana Wackenhut in ihrem Naturfriseursalon Goldschnitt in Kaufering">
+            <figcaption>Tatjana Wackenhut — in ihrem Salon in Kaufering</figcaption>
           </figure>
           <div class="um-copy">
             <span class="eyebrow">Über mich</span>
@@ -814,11 +806,8 @@
     <div class="wrap">
       <div class="foot-top">
         <div class="foot-brand">
-          <a class="brand" href="#top">
-            <svg class="brand-mark" viewBox="-2 -2 38 25" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-              <path d="M0 21 A21 21 0 0 1 21 0 A13 13 0 0 1 34 13 A8 8 0 0 1 26 21 A5 5 0 0 1 21 16 A3 3 0 0 1 24 13 A2 2 0 0 1 26 15 A1 1 0 0 1 25 16"/>
-            </svg>
-            <span class="wm"><span class="gold">Gold</span>schnitt</span>
+          <a class="brand" href="#top" aria-label="Goldschnitt Naturfrisör — zum Seitenanfang">
+            <img class="brand-logo" src="assets/img/logo-goldschnitt-hell.png" width="771" height="334" alt="Goldschnitt Naturfrisör">
           </a>
           <p>Naturfrisör · Inhaberin Tatjana Wackenhut<br>Kolpingstraße 36 · 86916 Kaufering<br>Telefon: <a href="tel:+49819164102" style="color:var(--bone);">08191 / 64102</a></p>
         </div>
